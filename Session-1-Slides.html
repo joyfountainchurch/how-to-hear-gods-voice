@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing God's Voice - Session 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #fafafa;
+            color: #2c2c2c;
+            overflow: hidden;
+        }
+
+        .slideshow {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 80px;
+            background: #fafafa;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .slide-content {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: normal;
+            margin-bottom: 0.5em;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            font-weight: normal;
+            margin-bottom: 0.8em;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 1.875em;
+            font-weight: normal;
+            margin-bottom: 0.6em;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        p {
+            font-size: 1.75em;
+            line-height: 1.7;
+            margin-bottom: 0.8em;
+            color: #3a3a3a;
+        }
+
+        .scripture {
+            font-style: italic;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ececec 100%);
+            padding: 30px 40px;
+            border-left: 4px solid #8b7355;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .scripture p {
+            font-size: 1.56em;
+            line-height: 1.8;
+            margin-bottom: 0.6em;
+        }
+
+        .scripture p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scripture-ref {
+            font-style: normal;
+            font-weight: bold;
+            color: #6b5344;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.375em;
+        }
+
+        .verse-num {
+            font-weight: bold;
+            color: #8b7355;
+            font-style: normal;
+            margin-right: 3px;
+        }
+
+        ul {
+            text-align: left;
+            list-style: none;
+            padding-left: 0;
+            display: inline-block;
+        }
+
+        ul li {
+            font-size: 1.625em;
+            line-height: 1.6;
+            margin-bottom: 0.7em;
+            padding-left: 30px;
+            position: relative;
+            text-align: left;
+        }
+
+        ul li::before {
+            content: "\2022";
+            color: #8b7355;
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #666;
+            margin-top: 0.5em;
+        }
+
+        .section-label {
+            font-size: 1.125em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #8b7355;
+            margin-bottom: 1em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: #8b7355;
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            font-size: 1.125em;
+            color: #888;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 30px;
+            font-size: 1.06em;
+            color: #aaa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .title-slide h1 {
+            font-size: 4em;
+            margin-bottom: 0.3em;
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.875em;
+            color: #555;
+        }
+
+        .scripture-slide .slide-content {
+            max-width: 850px;
+        }
+
+        .compact-scripture .scripture p {
+            font-size: 1.375em;
+            line-height: 1.7;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(139, 115, 85, 0.2) 60%);
+            padding: 0 4px;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.875em;
+            }
+
+            p, ul li {
+                font-size: 1.375em;
+            }
+
+            .scripture p {
+                font-size: 1.25em;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow">
+        <!-- Slide 1: Title -->
+        <div class="slide title-slide active">
+            <div class="slide-content">
+                <h1>Hearing God's Voice</h1>
+                <p class="subtitle">Session 1: Introduction and Overview</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Anchor Scripture -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">John 10:5, 27-28 (NKJV)</span>
+                    <p><span class="verse-num">5</span> "Yet they will by no means follow a stranger, but will flee from him, for they do not know the voice of strangers."</p>
+                    <p><span class="verse-num">27</span> "My sheep hear My voice, and I know them, and they follow Me.</p>
+                    <p><span class="verse-num">28</span> And I give them eternal life, and they shall never perish; neither shall anyone snatch them out of My hand."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Objective -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Course Objective</h2>
+                <p>The purpose of this course is to help participants discern the voice of the Father in 5 sessions of an hour each.</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Expected Outcome -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Expected Outcome</h2>
+                <p>After completion, you should have clarity in knowing when the Lord is speaking to you in whatever way He chooses to speak.</p>
+                <p>You will also learn to hear The Father's Voice for yourself first, before hearing Him for others.</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Introduction -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Introduction</h2>
+                <p>The voice of God has always been heard from creation and throughout scripture. His voice is valid today as it was then.</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Introduction Examples -->
+        <div class="slide">
+            <div class="slide-content">
+                <ul>
+                    <li>An Angel was sent to Mary to announce the Divine purpose for her life</li>
+                    <li>Joseph was informed in a dream to take Mary as his wife</li>
+                    <li>An Angel warned the wise men in a dream not to return to Herod</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 7: The Question -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>If the birth of the Saviour was surrounded by God's voice distinctively punctuating the events...</p>
+                <p>And if the volume of scriptures show humans hearing clearly from the God of heaven...</p>
+                <p><strong>Why would it be strange for the Lord to speak to us today?</strong></p>
+            </div>
+        </div>
+
+        <!-- Slide 8: OT Examples Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Old Testament Examples</h2>
+            </div>
+        </div>
+
+        <!-- Slide 9: Genesis 1:1-3 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 1:1-3 (NKJV)</span>
+                    <p><span class="verse-num">1</span> In the beginning God created the heavens and the earth.</p>
+                    <p><span class="verse-num">2</span> The earth was without form, and void; and darkness was on the face of the deep. And the Spirit of God was hovering over the face of the waters.</p>
+                    <p><span class="verse-num">3</span> Then God said, "Let there be light"; and there was light.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Genesis 1:4-6 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 1:4-6 (NKJV)</span>
+                    <p><span class="verse-num">4</span> And God saw the light, that it was good; and God divided the light from the darkness.</p>
+                    <p><span class="verse-num">5</span> God called the light Day, and the darkness He called Night. So the evening and the morning were the first day.</p>
+                    <p><span class="verse-num">6</span> Then God said, "Let there be a firmament in the midst of the waters, and let it divide the waters from the waters."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: 1 Samuel 9:15-17 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 9:15-17 (NKJV)</span>
+                    <p><span class="verse-num">15</span> Now the Lord had told Samuel in his ear the day before Saul came, saying,</p>
+                    <p><span class="verse-num">16</span> "Tomorrow about this time I will send you a man from the land of Benjamin, and you shall anoint him commander over My people Israel, that he may save My people from the hand of the Philistines; for I have looked upon My people, because their cry has come to Me."</p>
+                    <p><span class="verse-num">17</span> And when Samuel saw Saul, the Lord said to him, "There he is, the man of whom I spoke to you. This one shall reign over My people."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: 2 Kings 6:8-12 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">2 Kings 6:8-12 (NKJV)</span>
+                    <p><span class="verse-num">8</span> Now the king of Syria was making war against Israel; and he consulted with his servants, saying, "My camp will be in such and such a place."</p>
+                    <p><span class="verse-num">9</span> And the man of God sent to the king of Israel, saying, "Beware that you do not pass this place, for the Syrians are coming down there."</p>
+                    <p><span class="verse-num">10</span> Then the king of Israel sent someone to the place of which the man of God had told him. Thus he warned him, and he was watchful there, not just once or twice.</p>
+                    <p><span class="verse-num">11</span> Therefore the heart of the king of Syria was greatly troubled by this thing; and he called his servants and said to them, "Will you not show me which of us is for the king of Israel?"</p>
+                    <p><span class="verse-num">12</span> And one of his servants said, "None, my lord, O king; but Elisha, the prophet who is in Israel, tells the king of Israel the words that you speak in your bedroom."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: 2 Kings 6:13-17 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">2 Kings 6:13-17 (NKJV)</span>
+                    <p><span class="verse-num">13</span> So he said, "Go and see where he is, that I may send and get him." And it was told him, saying, "Surely he is in Dothan."</p>
+                    <p><span class="verse-num">14</span> Therefore he sent horses and chariots and a great army there, and they came by night and surrounded the city.</p>
+                    <p><span class="verse-num">15</span> And when the servant of the man of God arose early and went out, there was an army, surrounding the city with horses and chariots. And his servant said to him, "Alas, my master! What shall we do?"</p>
+                    <p><span class="verse-num">16</span> So he answered, <strong>"Do not fear, for those who are with us are more than those who are with them."</strong></p>
+                    <p><span class="verse-num">17</span> And Elisha prayed, and said, "Lord, I pray, open his eyes that he may see." Then the Lord opened the eyes of the young man, and he saw. And behold, the mountain was full of horses and chariots of fire all around Elisha.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: 2 Kings 6:18-23 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">2 Kings 6:18-23 (NKJV)</span>
+                    <p><span class="verse-num">18</span> So when the Syrians came down to him, Elisha prayed to the Lord, and said, "Strike this people, I pray, with blindness." And He struck them with blindness according to the word of Elisha.</p>
+                    <p><span class="verse-num">19</span> Now Elisha said to them, "This is not the way, nor is this the city. Follow me, and I will bring you to the man whom you seek." But he led them to Samaria.</p>
+                    <p><span class="verse-num">20</span> So it was, when they had come to Samaria, that Elisha said, "Lord, open the eyes of these men, that they may see." And the Lord opened their eyes, and they saw; and there they were, inside Samaria!</p>
+                    <p><span class="verse-num">21</span> Now when the king of Israel saw them, he said to Elisha, "My father, shall I kill them? Shall I kill them?"</p>
+                    <p><span class="verse-num">22</span> But he answered, "You shall not kill them. Would you kill those whom you have taken captive with your sword and your bow? Set food and water before them, that they may eat and drink and go to their master."</p>
+                    <p><span class="verse-num">23</span> Then he prepared a great feast for them; and after they ate and drank, he sent them away and they went to their master. So the bands of Syrian raiders came no more into the land of Israel.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Ezekiel 1:1-4 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Ezekiel 1:1-4 (NKJV)</span>
+                    <p><span class="verse-num">1</span> Now it came to pass in the thirtieth year, in the fourth month, on the fifth day of the month, as I was among the captives by the River Chebar, that the heavens were opened and I saw visions of God.</p>
+                    <p><span class="verse-num">2-3</span> On the fifth day of the month, which was in the fifth year of King Jehoiachin's captivity, the word of the Lord came expressly to Ezekiel the priest, the son of Buzi, in the land of the Chaldeans by the River Chebar; and the hand of the Lord was upon him there.</p>
+                    <p><span class="verse-num">4</span> Then I looked, and behold, a whirlwind was coming out of the north, a great cloud with raging fire engulfing itself; and brightness was all around it and radiating out of its midst like the color of amber, out of the midst of the fire.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 16: Isaiah 38:4-8 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Isaiah 38:4-8 (NKJV)</span>
+                    <p><span class="verse-num">4</span> And the word of the Lord came to Isaiah, saying,</p>
+                    <p><span class="verse-num">5</span> "Go and tell Hezekiah, 'Thus says the Lord, the God of David your father: "I have heard your prayer, I have seen your tears; surely I will add to your days fifteen years.</p>
+                    <p><span class="verse-num">6</span> I will deliver you and this city from the hand of the king of Assyria, and I will defend this city."'</p>
+                    <p><span class="verse-num">7</span> And this is the sign to you from the Lord, that the Lord will do this thing which He has spoken:</p>
+                    <p><span class="verse-num">8</span> Behold, I will bring the shadow on the sundial, which has gone down with the sun on the sundial of Ahaz, ten degrees backward." So the sun returned ten degrees on the dial by which it had gone down.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 17: Daniel 10:1-4 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Daniel 10:1-4 (NKJV)</span>
+                    <p><span class="verse-num">1</span> In the third year of Cyrus king of Persia a message was revealed to Daniel, whose name was called Belteshazzar. The message was true, but the appointed time was long; and he understood the message, and had understanding of the vision.</p>
+                    <p><span class="verse-num">2</span> In those days I, Daniel, was mourning three full weeks.</p>
+                    <p><span class="verse-num">3</span> I ate no pleasant food, no meat or wine came into my mouth, nor did I anoint myself at all, till three whole weeks were fulfilled.</p>
+                    <p><span class="verse-num">4</span> Now on the twenty-fourth day of the first month, as I was by the side of the great river, that is, the Tigris,</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 18: Daniel 10:5-7 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Daniel 10:5-7 (NKJV)</span>
+                    <p><span class="verse-num">5</span> I lifted my eyes and looked, and behold, a certain man clothed in linen, whose waist was girded with gold of Uphaz!</p>
+                    <p><span class="verse-num">6</span> His body was like beryl, his face like the appearance of lightning, his eyes like torches of fire, his arms and feet like burnished bronze in color, and the sound of his words like the voice of a multitude.</p>
+                    <p><span class="verse-num">7</span> And I, Daniel, alone saw the vision, for the men who were with me did not see the vision; but a great terror fell upon them, so that they fled to hide themselves.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19: Judges 13:1-5 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Judges 13:1-5 (NKJV)</span>
+                    <p><span class="verse-num">1</span> Again the children of Israel did evil in the sight of the Lord, and the Lord delivered them into the hand of the Philistines for forty years.</p>
+                    <p><span class="verse-num">2</span> Now there was a certain man from Zorah, of the family of the Danites, whose name was Manoah; and his wife was barren and had no children.</p>
+                    <p><span class="verse-num">3</span> And the Angel of the Lord appeared to the woman and said to her, "Indeed now, you are barren and have borne no children, but you shall conceive and bear a son.</p>
+                    <p><span class="verse-num">4</span> Now therefore, please be careful not to drink wine or similar drink, and not to eat anything unclean.</p>
+                    <p><span class="verse-num">5</span> For behold, you shall conceive and bear a son. And no razor shall come upon his head, for the child shall be a Nazirite to God from the womb; and he shall begin to deliver Israel out of the hand of the Philistines."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 20: Judges 13:6-10 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Judges 13:6-10 (NKJV)</span>
+                    <p><span class="verse-num">6</span> So the woman came and told her husband, saying, "A Man of God came to me, and His countenance was like the countenance of the Angel of God, very awesome; but I did not ask Him where He was from, and He did not tell me His name.</p>
+                    <p><span class="verse-num">7</span> And He said to me, 'Behold, you shall conceive and bear a son. Now drink no wine or similar drink, nor eat anything unclean, for the child shall be a Nazirite to God from the womb to the day of his death.'"</p>
+                    <p><span class="verse-num">8</span> Then Manoah prayed to the Lord, and said, "O my Lord, please let the Man of God whom You sent come to us again and teach us what we shall do for the child who will be born."</p>
+                    <p><span class="verse-num">9</span> And God listened to the voice of Manoah, and the Angel of God came to the woman again as she was sitting in the field; but Manoah her husband was not with her.</p>
+                    <p><span class="verse-num">10</span> Then the woman ran in haste and told her husband, and said to him, "Look, the Man who came to me the other day has just now appeared to me!"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 21: Judges 13:11-16 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Judges 13:11-16 (NKJV)</span>
+                    <p><span class="verse-num">11</span> So Manoah arose and followed his wife. When he came to the Man, he said to Him, "Are You the Man who spoke to this woman?" And He said, "I am."</p>
+                    <p><span class="verse-num">12</span> Manoah said, "Now let Your words come to pass! What will be the boy's rule of life, and his work?"</p>
+                    <p><span class="verse-num">13</span> So the Angel of the Lord said to Manoah, "Of all that I said to the woman let her be careful.</p>
+                    <p><span class="verse-num">14</span> She may not eat anything that comes from the vine, nor may she drink wine or similar drink, nor eat anything unclean. All that I commanded her let her observe."</p>
+                    <p><span class="verse-num">15</span> Then Manoah said to the Angel of the Lord, "Please let us detain You, and we will prepare a young goat for You."</p>
+                    <p><span class="verse-num">16</span> And the Angel of the Lord said to Manoah, "Though you detain Me, I will not eat your food. But if you offer a burnt offering, you must offer it to the Lord." (For Manoah did not know He was the Angel of the Lord.)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 22: Judges 13:17-21 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Judges 13:17-21 (NKJV)</span>
+                    <p><span class="verse-num">17</span> Then Manoah said to the Angel of the Lord, "What is Your name, that when Your words come to pass we may honor You?"</p>
+                    <p><span class="verse-num">18</span> And the Angel of the Lord said to him, <strong>"Why do you ask My name, seeing it is wonderful?"</strong></p>
+                    <p><span class="verse-num">19</span> So Manoah took the young goat with the grain offering, and offered it upon the rock to the Lord. And He did a wondrous thing while Manoah and his wife looked on—</p>
+                    <p><span class="verse-num">20</span> it happened as the flame went up toward heaven from the altar—the Angel of the Lord ascended in the flame of the altar! When Manoah and his wife saw this, they fell on their faces to the ground.</p>
+                    <p><span class="verse-num">21</span> When the Angel of the Lord appeared no more to Manoah and his wife, then Manoah knew that He was the Angel of the Lord.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 23: NT Examples Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>New Testament Examples</h2>
+            </div>
+        </div>
+
+        <!-- Slide 24: Luke 1:26-31 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Luke 1:26-31 (NKJV)</span>
+                    <p><span class="verse-num">26</span> Now in the sixth month the angel Gabriel was sent by God to a city of Galilee named Nazareth,</p>
+                    <p><span class="verse-num">27</span> to a virgin betrothed to a man whose name was Joseph, of the house of David. The virgin's name was Mary.</p>
+                    <p><span class="verse-num">28</span> And having come in, the angel said to her, "Rejoice, highly favored one, the Lord is with you; blessed are you among women!"</p>
+                    <p><span class="verse-num">29</span> But when she saw him, she was troubled at his saying, and considered what manner of greeting this was.</p>
+                    <p><span class="verse-num">30</span> Then the angel said to her, "Do not be afraid, Mary, for you have found favor with God.</p>
+                    <p><span class="verse-num">31</span> And behold, you will conceive in your womb and bring forth a Son, and shall call His name Jesus.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 25: Luke 1:32-38 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Luke 1:32-38 (NKJV)</span>
+                    <p><span class="verse-num">32</span> He will be great, and will be called the Son of the Highest; and the Lord God will give Him the throne of His father David.</p>
+                    <p><span class="verse-num">33</span> And He will reign over the house of Jacob forever, and of His kingdom there will be no end."</p>
+                    <p><span class="verse-num">34</span> Then Mary said to the angel, "How can this be, since I do not know a man?"</p>
+                    <p><span class="verse-num">35</span> And the angel answered and said to her, "The Holy Spirit will come upon you, and the power of the Highest will overshadow you; therefore, also, that Holy One who is to be born will be called the Son of God.</p>
+                    <p><span class="verse-num">36</span> Now indeed, Elizabeth your relative has also conceived a son in her old age; and this is now the sixth month for her who was called barren.</p>
+                    <p><span class="verse-num">37</span> For with God nothing will be impossible."</p>
+                    <p><span class="verse-num">38</span> Then Mary said, <strong>"Behold the maidservant of the Lord! Let it be to me according to your word."</strong> And the angel departed from her.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 26: Daniel 9:1-6 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Daniel 9:1-6 (NKJV)</span>
+                    <p><span class="verse-num">1</span> In the first year of Darius the son of Ahasuerus, of the lineage of the Medes, who was made king over the realm of the Chaldeans—</p>
+                    <p><span class="verse-num">2</span> in the first year of his reign I, Daniel, understood by the books the number of the years specified by the word of the Lord through Jeremiah the prophet, that He would accomplish seventy years in the desolations of Jerusalem.</p>
+                    <p><span class="verse-num">3</span> Then I set my face toward the Lord God to make request by prayer and supplications, with fasting, sackcloth, and ashes.</p>
+                    <p><span class="verse-num">4</span> And I prayed to the Lord my God, and made confession, and said, "O Lord, great and awesome God, who keeps His covenant and mercy with those who love Him, and with those who keep His commandments,</p>
+                    <p><span class="verse-num">5</span> we have sinned and committed iniquity, we have done wickedly and rebelled, even by departing from Your precepts and Your judgments.</p>
+                    <p><span class="verse-num">6</span> Neither have we heeded Your servants the prophets, who spoke in Your name to our kings and our princes, to our fathers and all the people of the land.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 27: Daniel 9:7-12 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Daniel 9:7-12 (NKJV)</span>
+                    <p><span class="verse-num">7</span> O Lord, righteousness belongs to You, but to us shame of face, as it is this day—to the men of Judah, to the inhabitants of Jerusalem and all Israel, those near and those far off in all the countries to which You have driven them, because of the unfaithfulness which they have committed against You.</p>
+                    <p><span class="verse-num">8</span> O Lord, to us belongs shame of face, to our kings, our princes, and our fathers, because we have sinned against You.</p>
+                    <p><span class="verse-num">9</span> To the Lord our God belong mercy and forgiveness, though we have rebelled against Him.</p>
+                    <p><span class="verse-num">10</span> We have not obeyed the voice of the Lord our God, to walk in His laws, which He set before us by His servants the prophets.</p>
+                    <p><span class="verse-num">11</span> Yes, all Israel has transgressed Your law, and has departed so as not to obey Your voice; therefore the curse and the oath written in the Law of Moses the servant of God have been poured out on us, because we have sinned against Him.</p>
+                    <p><span class="verse-num">12</span> And He has confirmed His words, which He spoke against us and against our judges who judged us, by bringing upon us a great disaster; for under the whole heaven such has never been done as what has been done to Jerusalem.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 28: Daniel 9:13-19 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Daniel 9:13-19 (NKJV)</span>
+                    <p><span class="verse-num">13</span> As it is written in the Law of Moses, all this disaster has come upon us; yet we have not made our prayer before the Lord our God, that we might turn from our iniquities and understand Your truth.</p>
+                    <p><span class="verse-num">14</span> Therefore the Lord has kept the disaster in mind, and brought it upon us; for the Lord our God is righteous in all the works which He does, though we have not obeyed His voice.</p>
+                    <p><span class="verse-num">15</span> And now, O Lord our God, who brought Your people out of the land of Egypt with a mighty hand, and made Yourself a name, as it is this day—we have sinned, we have done wickedly!</p>
+                    <p><span class="verse-num">16</span> O Lord, according to all Your righteousness, I pray, let Your anger and Your fury be turned away from Your city Jerusalem, Your holy mountain; because for our sins, and for the iniquities of our fathers, Jerusalem and Your people are a reproach to all those around us.</p>
+                    <p><span class="verse-num">17</span> Now therefore, our God, hear the prayer of Your servant, and his supplications, and for the Lord's sake cause Your face to shine on Your sanctuary, which is desolate.</p>
+                    <p><span class="verse-num">18</span> O my God, incline Your ear and hear; open Your eyes and see our desolations, and the city which is called by Your name; for we do not present our supplications before You because of our righteous deeds, but because of Your great mercies.</p>
+                    <p><span class="verse-num">19</span> O Lord, hear! O Lord, forgive! O Lord, listen and act! Do not delay for Your own sake, my God, for Your city and Your people are called by Your name."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 29: Daniel 9:20-23 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Daniel 9:20-23 (NKJV)</span>
+                    <p><span class="verse-num">20</span> Now while I was speaking, praying, and confessing my sin and the sin of my people Israel, and presenting my supplication before the Lord my God for the holy mountain of my God,</p>
+                    <p><span class="verse-num">21</span> yes, while I was speaking in prayer, the man Gabriel, whom I had seen in the vision at the beginning, being caused to fly swiftly, reached me about the time of the evening offering.</p>
+                    <p><span class="verse-num">22</span> And he informed me, and talked with me, and said, "O Daniel, I have now come forth to give you skill to understand.</p>
+                    <p><span class="verse-num">23</span> <strong>At the beginning of your supplications the command went out, and I have come to tell you, for you are greatly beloved;</strong> therefore consider the matter, and understand the vision:</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 30: Daniel 9:24-27 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Daniel 9:24-27 (NKJV)</span>
+                    <p><span class="verse-num">24</span> "Seventy weeks are determined for your people and for your holy city, to finish the transgression, to make an end of sins, to make reconciliation for iniquity, to bring in everlasting righteousness, to seal up vision and prophecy, and to anoint the Most Holy.</p>
+                    <p><span class="verse-num">25</span> Know therefore and understand, that from the going forth of the command to restore and build Jerusalem until Messiah the Prince, there shall be seven weeks and sixty-two weeks; the street shall be built again, and the wall, even in troublesome times.</p>
+                    <p><span class="verse-num">26</span> And after the sixty-two weeks Messiah shall be cut off, but not for Himself; and the people of the prince who is to come shall destroy the city and the sanctuary. The end of it shall be with a flood, and till the end of the war desolations are determined.</p>
+                    <p><span class="verse-num">27</span> Then he shall confirm a covenant with many for one week; but in the middle of the week He shall bring an end to sacrifice and offering. And on the wing of abominations shall be one who makes desolate, even until the consummation, which is determined, is poured out on the desolate."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 31: Acts 9:10-14 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 9:10-14 (NKJV)</span>
+                    <p><span class="verse-num">10</span> Now there was a certain disciple at Damascus named Ananias; and to him the Lord said in a vision, "Ananias." And he said, "Here I am, Lord."</p>
+                    <p><span class="verse-num">11</span> So the Lord said to him, "Arise and go to the street called Straight, and inquire at the house of Judas for one called Saul of Tarsus, for behold, he is praying.</p>
+                    <p><span class="verse-num">12</span> And in a vision he has seen a man named Ananias coming in and putting his hand on him, so that he might receive his sight."</p>
+                    <p><span class="verse-num">13</span> Then Ananias answered, "Lord, I have heard from many about this man, how much harm he has done to Your saints in Jerusalem.</p>
+                    <p><span class="verse-num">14</span> And here he has authority from the chief priests to bind all who call on Your name."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 32: Acts 9:15-19 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 9:15-19 (NKJV)</span>
+                    <p><span class="verse-num">15</span> But the Lord said to him, <strong>"Go, for he is a chosen vessel of Mine to bear My name before Gentiles, kings, and the children of Israel.</strong></p>
+                    <p><span class="verse-num">16</span> For I will show him how many things he must suffer for My name's sake."</p>
+                    <p><span class="verse-num">17</span> And Ananias went his way and entered the house; and laying his hands on him he said, "Brother Saul, the Lord Jesus, who appeared to you on the road as you came, has sent me that you may receive your sight and be filled with the Holy Spirit."</p>
+                    <p><span class="verse-num">18</span> Immediately there fell from his eyes something like scales, and he received his sight at once; and he arose and was baptized.</p>
+                    <p><span class="verse-num">19</span> So when he had received food, he was strengthened. Then Saul spent some days with the disciples at Damascus.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 33: Acts 21:10-14 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 21:10-14 (NKJV)</span>
+                    <p><span class="verse-num">10</span> And as we stayed many days, a certain prophet named Agabus came down from Judea.</p>
+                    <p><span class="verse-num">11</span> When he had come to us, he took Paul's belt, bound his own hands and feet, and said, "Thus says the Holy Spirit, 'So shall the Jews at Jerusalem bind the man who owns this belt, and deliver him into the hands of the Gentiles.'"</p>
+                    <p><span class="verse-num">12</span> Now when we heard these things, both we and those from that place pleaded with him not to go up to Jerusalem.</p>
+                    <p><span class="verse-num">13</span> Then Paul answered, "What do you mean by weeping and breaking my heart? For I am ready not only to be bound, but also to die at Jerusalem for the name of the Lord Jesus."</p>
+                    <p><span class="verse-num">14</span> So when he would not be persuaded, we ceased, saying, <strong>"The will of the Lord be done."</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 34: Acts 16:14 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 16:14 (NKJV)</span>
+                    <p><span class="verse-num">14</span> Now a certain woman named Lydia heard us. She was a seller of purple from the city of Thyatira, who worshiped God. <strong>The Lord opened her heart to heed the things spoken by Paul.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 35: Acts 8:1-6 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 8:1, 4-6 (NKJV)</span>
+                    <p><span class="verse-num">1</span> Now Saul was consenting to his death. At that time a great persecution arose against the church which was at Jerusalem; and they were all scattered throughout the regions of Judea and Samaria, except the apostles.</p>
+                    <p><span class="verse-num">4</span> Therefore those who were scattered went everywhere preaching the word.</p>
+                    <p><span class="verse-num">5</span> Then Philip went down to the city of Samaria and preached Christ to them.</p>
+                    <p><span class="verse-num">6</span> And the multitudes with one accord heeded the things spoken by Philip, hearing and seeing the miracles which he did.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 36: Why Learn -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Why Today's Believer Must Learn<br>The Father's Voice As A Priority</h2>
+                <ul>
+                    <li>We are priests unto our God</li>
+                    <li>The primary role of a priest is to act as a mediator between God and the people</li>
+                    <li>The priest must first worship God in order to hear from Him for the people they represent</li>
+                    <li>We are in the world but not of the world</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 37: Authority of Scripture Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>The Authority And Purpose<br>Of The Scriptures</h2>
+            </div>
+        </div>
+
+        <!-- Slide 38: 2 Timothy 3:16-17 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">2 Timothy 3:16-17 (NKJV)</span>
+                    <p><span class="verse-num">16</span> All Scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness,</p>
+                    <p><span class="verse-num">17</span> that the man of God may be complete, thoroughly equipped for every good work.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 39: Romans 15:4-5 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Romans 15:4-5 (NKJV)</span>
+                    <p><span class="verse-num">4</span> For whatever things were written before were written for our learning, that we through the patience and comfort of the Scriptures might have hope.</p>
+                    <p><span class="verse-num">5</span> Now may the God of patience and comfort grant you to be like-minded toward one another, according to Christ Jesus.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 40: 4 Ways Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>4 Principal Ways<br>The Lord Speaks To Us</h2>
+                <p>You cannot miss His voice if you're paying attention or seeking to hear Him.</p>
+            </div>
+        </div>
+
+        <!-- Slide 41: Audible Voice -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>1. Audible Voice</h2>
+                <ul>
+                    <li>An actual voice giving you instructions</li>
+                    <li>An inner witness in your spirit</li>
+                    <li>A voice or knowing within your spirit guiding you and confirming things to you</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 42: Written Text -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>2. Through The Written Text</h2>
+                <ul>
+                    <li>Why? Because Scripture is God-breathed!</li>
+                    <li>Scripture text illumined by the Spirit</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 43: Third Parties -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>3. Through Third Parties</h2>
+                <ul>
+                    <li>Angels (Luke 1:26-38, Daniel 9:1-27)</li>
+                    <li>Other human agents: Ananias, Agabus</li>
+                    <li>Preachers and ministers of God</li>
+                    <li>Other believers sharing their faith</li>
+                    <li>God can use anything to send a message to you—including inanimate objects</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 44: Big Question Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>The Big Question Many Ask</h2>
+                <p>Why do some people struggle to hear even when they pray to hear God speak to them? They say God is not speaking to them.</p>
+                <p>Could the problem be personal pride, an unrepentant heart, idol worship? Or could it be that they haven't been well taught/discipled?</p>
+            </div>
+        </div>
+
+        <!-- Slide 45: Ezekiel 14:4 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <h3>1. Multitude of Idols</h3>
+                <div class="scripture">
+                    <span class="scripture-ref">Ezekiel 14:4 (NKJV)</span>
+                    <p>"Therefore speak to them, and say to them, 'Thus says the Lord GOD: Everyone of the house of Israel who sets up his idols in his heart, and puts before him what causes him to stumble into iniquity, and then comes to the prophet, I the LORD will answer him who comes, <strong>according to the multitude of his idols.</strong>'"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 46: Proverbs 15:8 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <h3>2. Sinfulness</h3>
+                <div class="scripture">
+                    <span class="scripture-ref">Proverbs 15:8 (NKJV)</span>
+                    <p><strong>"The sacrifice of the wicked is an abomination to the LORD,</strong><br>But the prayer of the upright is His delight."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 47: Psalm 138:6 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <h3>3. Pride</h3>
+                <div class="scripture">
+                    <span class="scripture-ref">Psalm 138:6 (NKJV)</span>
+                    <p>"Though the LORD is on high, yet He regards the lowly;<br><strong>But the proud He knows from afar.</strong>"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 48: Romans 12:1-2 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <h3>4. Inflexible Mindset</h3>
+                <div class="scripture">
+                    <span class="scripture-ref">Romans 12:1-2 (NKJV)</span>
+                    <p><span class="verse-num">1</span> I beseech you therefore, brethren, by the mercies of God, that you present your bodies a living sacrifice, holy, acceptable to God, which is your reasonable service.</p>
+                    <p><span class="verse-num">2</span> <strong>And do not be conformed to this world, but be transformed by the renewing of your mind,</strong> that you may prove what is that good and acceptable and perfect will of God.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 49: Conclusion Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Conclusion</h2>
+                <p>The first thing every human should and must hear from God is the call to salvation in Christ.</p>
+                <p>God can speak to anyone. If He can speak to and through Balaam's donkey, He can definitely give instructions to anyone.</p>
+                <p>However, His desire is that all men should be saved.</p>
+            </div>
+        </div>
+
+        <!-- Slide 50: John 3:16 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">John 3:16 (NKJV)</span>
+                    <p style="font-size: 1.4em;">"For God so loved the world that He gave His only begotten Son, that whoever believes in Him should not perish but have everlasting life."</p>
+                </div>
+                <p style="margin-top: 30px;">He wants us to hear His call to come out of darkness to light before anything else.</p>
+            </div>
+        </div>
+
+        <!-- Slide 51: Matthew 11:28-30 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Matthew 11:28-30 (NKJV)</span>
+                    <p><span class="verse-num">28</span> "Come to Me, all you who labor and are heavy laden, and I will give you rest.</p>
+                    <p><span class="verse-num">29</span> Take My yoke upon you and learn from Me, for I am gentle and lowly in heart, and you will find rest for your souls.</p>
+                    <p><span class="verse-num">30</span> For My yoke is easy and My burden is light."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 52: Next Session -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Session 2 Examines</h2>
+                <p style="font-size: 1.6em; margin-top: 30px;">"The Voice Of The Stranger"</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-counter" id="slideCounter">1 / 52</div>
+    <div class="nav-hint">Use arrow keys to navigate</div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+        const slideCounter = document.getElementById('slideCounter');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= slides.length) index = slides.length - 1;
+
+            slides[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+
+            // Update progress bar
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = progress + '%';
+
+            // Update counter
+            slideCounter.textContent = (currentSlide + 1) + ' / ' + slides.length;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                showSlide(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                showSlide(slides.length - 1);
+            }
+        });
+
+        // Click navigation
+        document.addEventListener('click', (e) => {
+            const x = e.clientX;
+            const width = window.innerWidth;
+            if (x > width / 2) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        });
+
+        // Touch navigation
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        });
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>

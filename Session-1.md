@@ -53,7 +53,8 @@ You cannot miss His voice if you're paying attention or seeking to hear Him.
 Audible voice 
 
 * An actual voice giving you instructions  
-* An Inner witness in your spirit   
+
+An Inner witness in your spirit   
 * A voice or knowing within your spirit guiding you and confirming things to you
 
 Through The Written Text 

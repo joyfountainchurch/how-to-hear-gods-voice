@@ -136,6 +136,58 @@
             margin-bottom: 0.8em;
         }
 
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin-bottom: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .toc {
+            margin-bottom: 60px;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .toc ol {
+            padding-left: 24px;
+            margin: 20px 0;
+        }
+
+        .toc ol li {
+            font-size: 1.25em;
+            line-height: 1.7;
+            margin-bottom: 0.5em;
+            color: #3a3a3a;
+        }
+
+        .toc ol li a {
+            color: #6b5344;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .toc ol li a:hover {
+            color: #8b7355;
+            text-decoration: underline;
+        }
+
         .anchor-scripture {
             text-align: center;
             padding: 40px 0;
@@ -247,6 +299,27 @@
             <p class="subtitle">Session 1: Introduction and Overview</p>
         </header>
 
+        <div class="video-container">
+            <iframe src="https://drive.google.com/file/d/1-Y1Sh1P1u-BrsvpJXeyLX3x6ZdHCglr5/preview" allow="autoplay"></iframe>
+        </div>
+
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ol>
+                <li><a href="#objective">Course Objective</a></li>
+                <li><a href="#outcome">Expected Outcome</a></li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#ot-examples">Old Testament Examples</a></li>
+                <li><a href="#nt-examples">New Testament Examples</a></li>
+                <li><a href="#why-learn">Why Today's Believer Must Learn The Father's Voice</a></li>
+                <li><a href="#authority">The Authority And Purpose Of The Scriptures</a></li>
+                <li><a href="#four-ways">4 Principal Ways The Lord Speaks To Us</a></li>
+                <li><a href="#big-question">The Big Question Many Ask</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#assignment">Assignment</a></li>
+            </ol>
+        </nav>
+
         <div class="anchor-scripture">
             <div class="scripture">
                 <span class="scripture-ref">John 10:5, 27-28 (NKJV)</span>
@@ -256,14 +329,14 @@
             </div>
         </div>
 
-        <h2>Course Objective</h2>
+        <h2 id="objective">Course Objective</h2>
         <p>The purpose of this course is to help participants discern the voice of the Father in 5 sessions of an hour each.</p>
 
-        <h2>Expected Outcome</h2>
+        <h2 id="outcome">Expected Outcome</h2>
         <p>After completion, you should have clarity in knowing when the Lord is speaking to you in whatever way He chooses to speak.</p>
         <p>You will also learn to hear The Father's Voice for yourself first, before hearing Him for others.</p>
 
-        <h2>Introduction</h2>
+        <h2 id="introduction">Introduction</h2>
         <p>The voice of God has always been heard from creation and throughout scripture. His voice is valid today as it was then.</p>
         <ul>
             <li>An Angel was sent to Mary to announce the Divine purpose for her life</li>
@@ -272,7 +345,7 @@
         </ul>
         <p>If the birth of the Saviour was surrounded by God's voice distinctively punctuating the events... And if the volume of scriptures show humans hearing clearly from the God of heaven... <strong>Why would it be strange for the Lord to speak to us today?</strong></p>
 
-        <h2>Old Testament Examples</h2>
+        <h2 id="ot-examples">Old Testament Examples</h2>
 
         <h3>Creation</h3>
         <div class="scripture">
@@ -349,7 +422,7 @@
             <p><span class="verse-num">19-21</span> So Manoah took the young goat with the grain offering, and offered it upon the rock to the Lord. And He did a wondrous thing while Manoah and his wife looked on—it happened as the flame went up toward heaven from the altar—the Angel of the Lord ascended in the flame of the altar! When Manoah and his wife saw this, they fell on their faces to the ground. When the Angel of the Lord appeared no more to Manoah and his wife, then Manoah knew that He was the Angel of the Lord.</p>
         </div>
 
-        <h2>New Testament Examples</h2>
+        <h2 id="nt-examples">New Testament Examples</h2>
 
         <h3>The Annunciation to Mary</h3>
         <div class="scripture">
@@ -400,7 +473,7 @@
             <p><span class="verse-num">4-6</span> Therefore those who were scattered went everywhere preaching the word. Then Philip went down to the city of Samaria and preached Christ to them. And the multitudes with one accord heeded the things spoken by Philip, hearing and seeing the miracles which he did.</p>
         </div>
 
-        <h2>Why Today's Believer Must Learn The Father's Voice As A Priority</h2>
+        <h2 id="why-learn">Why Today's Believer Must Learn The Father's Voice As A Priority</h2>
         <ul>
             <li>We are priests unto our God</li>
             <li>The primary role of a priest is to act as a mediator between God and the people</li>
@@ -408,7 +481,7 @@
             <li>We are in the world but not of the world</li>
         </ul>
 
-        <h2>The Authority And Purpose Of The Scriptures</h2>
+        <h2 id="authority">The Authority And Purpose Of The Scriptures</h2>
 
         <div class="scripture">
             <span class="scripture-ref">2 Timothy 3:16-17 (NKJV)</span>
@@ -422,7 +495,7 @@
             <p><span class="verse-num">5</span> Now may the God of patience and comfort grant you to be like-minded toward one another, according to Christ Jesus.</p>
         </div>
 
-        <h2>4 Principal Ways The Lord Speaks To Us</h2>
+        <h2 id="four-ways">4 Principal Ways The Lord Speaks To Us</h2>
         <p>You cannot miss His voice if you're paying attention or seeking to hear Him.</p>
 
         <h3>1. Audible Voice</h3>
@@ -450,7 +523,7 @@
             <li>God can use anything to send a message to you—including inanimate objects</li>
         </ul>
 
-        <h2>The Big Question Many Ask</h2>
+        <h2 id="big-question">The Big Question Many Ask</h2>
         <p>Why do some people struggle to hear even when they pray to hear God speak to them? They say God is not speaking to them.</p>
         <p>Could the problem be personal pride, an unrepentant heart, idol worship? Or could it be that they haven't been well taught/discipled?</p>
 
@@ -479,7 +552,7 @@
             <p><span class="verse-num">2</span> <strong>And do not be conformed to this world, but be transformed by the renewing of your mind,</strong> that you may prove what is that good and acceptable and perfect will of God.</p>
         </div>
 
-        <h2>Conclusion</h2>
+        <h2 id="conclusion">Conclusion</h2>
         <p>The first thing every human should and must hear from God is the call to salvation in Christ.</p>
         <p>God can speak to anyone. If He can speak to and through Balaam's donkey, He can definitely give instructions to anyone.</p>
         <p>However, His desire is that all men should be saved.</p>
@@ -498,10 +571,11 @@
             <p><span class="verse-num">30</span> For My yoke is easy and My burden is light."</p>
         </div>
 
-        <div class="next-session">
-            <h2>Session 2 Examines</h2>
-            <p>"The Voice Of The Stranger"</p>
-        </div>
+        <h2 id="assignment">Assignment</h2>
+        <p>Find one or two places in the New Testament where the Lord speaks directly to an individual, providing direction to them.</p>
+
+        <h2>Session 2 Examines</h2>
+        <p>"The Voice Of The Stranger"</p>
     </div>
 </body>
 </html>

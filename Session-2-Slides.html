@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing God's Voice - Session 2 Slides</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #fafafa;
+            color: #2c2c2c;
+            overflow: hidden;
+        }
+
+        .slideshow {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 80px;
+            background: #fafafa;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .slide-content {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: normal;
+            margin-bottom: 0.5em;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            font-weight: normal;
+            margin-bottom: 0.8em;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 1.875em;
+            font-weight: normal;
+            margin-bottom: 0.6em;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        p {
+            font-size: 1.75em;
+            line-height: 1.7;
+            margin-bottom: 0.8em;
+            color: #3a3a3a;
+        }
+
+        .scripture {
+            font-style: italic;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ececec 100%);
+            padding: 30px 40px;
+            border-left: 4px solid #8b7355;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .scripture p {
+            font-size: 1.56em;
+            line-height: 1.8;
+            margin-bottom: 0.6em;
+        }
+
+        .scripture p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scripture-ref {
+            font-style: normal;
+            font-weight: bold;
+            color: #6b5344;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.375em;
+        }
+
+        .verse-num {
+            font-weight: bold;
+            color: #8b7355;
+            font-style: normal;
+            margin-right: 3px;
+        }
+
+        ul {
+            text-align: left;
+            list-style: none;
+            padding-left: 0;
+            display: inline-block;
+        }
+
+        ul li {
+            font-size: 1.625em;
+            line-height: 1.6;
+            margin-bottom: 0.7em;
+            padding-left: 30px;
+            position: relative;
+            text-align: left;
+        }
+
+        ul li::before {
+            content: "\2022";
+            color: #8b7355;
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        ol {
+            text-align: left;
+            display: inline-block;
+            padding-left: 30px;
+        }
+
+        ol li {
+            font-size: 1.625em;
+            line-height: 1.6;
+            margin-bottom: 0.7em;
+            padding-left: 8px;
+            text-align: left;
+        }
+
+        ol li::marker {
+            color: #8b7355;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #666;
+            margin-top: 0.5em;
+        }
+
+        .section-label {
+            font-size: 1.125em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #8b7355;
+            margin-bottom: 1em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: #8b7355;
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            font-size: 1.125em;
+            color: #888;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 30px;
+            font-size: 1.06em;
+            color: #aaa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .title-slide h1 {
+            font-size: 4em;
+            margin-bottom: 0.3em;
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.875em;
+            color: #555;
+        }
+
+        .scripture-slide .slide-content {
+            max-width: 850px;
+        }
+
+        .compact-scripture .scripture p {
+            font-size: 1.375em;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(139, 115, 85, 0.2) 60%);
+            padding: 0 4px;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.875em;
+            }
+
+            p, ul li, ol li {
+                font-size: 1.375em;
+            }
+
+            .scripture p {
+                font-size: 1.25em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow">
+        <!-- Slide 1: Title -->
+        <div class="slide title-slide active">
+            <div class="slide-content">
+                <h1>Hearing God's Voice</h1>
+                <p class="subtitle">Session 2: The Voice Of The Stranger</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>Jesus taught that His sheep hear His voice and that the voice of a stranger they will not hear.</p>
+                <p>He stated that we would <strong>FLEE</strong> from a stranger's voice. Amen!</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: John 10:1-3 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">John 10:1-3 (NKJV)</span>
+                    <p><span class="verse-num">1</span> "Most assuredly, I say to you, he who does not enter the sheepfold by the door, but climbs up some other way, the same is a thief and a robber.</p>
+                    <p><span class="verse-num">2</span> But he who enters by the door is the shepherd of the sheep.</p>
+                    <p><span class="verse-num">3</span> To him the doorkeeper opens, and the sheep hear his voice; and he calls his own sheep by name and leads them out.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: John 10:4-6 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">John 10:4-6 (NKJV)</span>
+                    <p><span class="verse-num">4</span> And when he brings out his own sheep, he goes before them; and the sheep follow him, for they know his voice.</p>
+                    <p><span class="verse-num">5</span> <strong>Yet they will by no means follow a stranger, but will flee from him, for they do not know the voice of strangers."</strong></p>
+                    <p><span class="verse-num">6</span> Jesus used this illustration, but they did not understand the things which He spoke to them.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Holy Spirit Transition -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>The voice of a stranger is unfamiliar.</p>
+                <p>Jesus sent His Holy Spirit to teach, comfort, empower, and guide us into all truth.</p>
+                <p>Most of the time it is the voice of the Holy Spirit we hear as believers.</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: John 14:15-18 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">John 14:15-18 (NKJV)</span>
+                    <p><span class="verse-num">15</span> "If you love Me, keep My commandments.</p>
+                    <p><span class="verse-num">16</span> And I will pray the Father, and He will give you another Helper, that He may abide with you forever—</p>
+                    <p><span class="verse-num">17</span> the Spirit of truth, whom the world cannot receive, because it neither sees Him nor knows Him; but you know Him, for He dwells with you and will be in you.</p>
+                    <p><span class="verse-num">18</span> I will not leave you orphans; I will come to you."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Who Is The Stranger -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Who Is The Stranger?</h2>
+                <p>The stranger is the devil. Jesus taught us that he comes to steal, kill, and destroy.</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: John 10:7-10 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">John 10:7-10 (NKJV)</span>
+                    <p><span class="verse-num">7</span> Then Jesus said to them again, "Most assuredly, I say to you, I am the door of the sheep.</p>
+                    <p><span class="verse-num">8</span> All who ever came before Me are thieves and robbers, but the sheep did not hear them.</p>
+                    <p><span class="verse-num">9</span> I am the door. If anyone enters by Me, he will be saved, and will go in and out and find pasture.</p>
+                    <p><span class="verse-num">10</span> The thief does not come except to steal, and to kill, and to destroy. <strong>I have come that they may have life, and that they may have it more abundantly.</strong>"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Lucifer's Fall -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Lucifer's Fall</h2>
+                <p>The devil was an archangel in heaven by the name Lucifer, who lost his place due to pride and wanting the Holy Throne for himself.</p>
+                <p style="font-size: 1.3em; color: #666; margin-top: 20px;">Read on your own: Isaiah 14:12-15 and Ezekiel 28:11-19</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Stranger's Other Names -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>The Stranger's Other Common Names</h2>
+                <ul>
+                    <li>Thief, Father of lies, Murderer from the beginning</li>
+                    <li>That old serpent, The dragon</li>
+                    <li>Prince of the power of the air, Deceiver</li>
+                    <li>The accuser, Beelzebub (lord of the flies)</li>
+                    <li>Satan, The tempter</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 11: John 8:12 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <p style="font-style: normal; margin-bottom: 20px;">He is of darkness, and we are of the Light.</p>
+                <div class="scripture">
+                    <span class="scripture-ref">John 8:12 (NKJV)</span>
+                    <p>Then Jesus spoke to them again, saying, <strong>"I am the light of the world. He who follows Me shall not walk in darkness, but have the light of life."</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Cohorts Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>The Stranger's Cohorts</h2>
+                <p>The stranger has cohorts: evil spirits (fallen angels, demons, devils), and humans who elect to serve the devil knowingly or ignorantly.</p>
+            </div>
+        </div>
+
+        <!-- Slide 13: Acts 13:8-12 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <h3>Elymas the Sorcerer</h3>
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 13:8-12 (NKJV)</span>
+                    <p><span class="verse-num">8</span> But Elymas the sorcerer (for so his name is translated) withstood them, seeking to turn the proconsul away from the faith.</p>
+                    <p><span class="verse-num">9-10</span> Then Saul, who also is called Paul, filled with the Holy Spirit, looked intently at him and said, "O full of all deceit and all fraud, you son of the devil, you enemy of all righteousness, will you not cease perverting the straight ways of the Lord?</p>
+                    <p><span class="verse-num">11</span> And now, indeed, the hand of the Lord is upon you, and you shall be blind, not seeing the sun for a time." And immediately a dark mist fell on him, and he went around seeking someone to lead him by the hand.</p>
+                    <p><span class="verse-num">12</span> Then the proconsul believed, when he saw what had been done, being astonished at the teaching of the Lord.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Acts 8:4-8 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <h3>Simon the Sorcerer of Samaria</h3>
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 8:4-8 (NKJV)</span>
+                    <p><span class="verse-num">4</span> Therefore those who were scattered went everywhere preaching the word.</p>
+                    <p><span class="verse-num">5</span> Then Philip went down to the city of Samaria and preached Christ to them.</p>
+                    <p><span class="verse-num">6</span> And the multitudes with one accord heeded the things spoken by Philip, hearing and seeing the miracles which he did.</p>
+                    <p><span class="verse-num">7</span> For unclean spirits, crying with a loud voice, came out of many who were possessed; and many who were paralyzed and lame were healed.</p>
+                    <p><span class="verse-num">8</span> And there was great joy in that city.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Acts 8:9-13 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 8:9-13 (NKJV)</span>
+                    <p><span class="verse-num">9</span> But there was a certain man called Simon, who previously practiced sorcery in the city and astonished the people of Samaria, claiming that he was someone great,</p>
+                    <p><span class="verse-num">10</span> to whom they all gave heed, from the least to the greatest, saying, "This man is the great power of God."</p>
+                    <p><span class="verse-num">11</span> And they heeded him because he had astonished them with his sorceries for a long time.</p>
+                    <p><span class="verse-num">12</span> But when they believed Philip as he preached the things concerning the kingdom of God and the name of Jesus Christ, both men and women were baptized.</p>
+                    <p><span class="verse-num">13</span> Then Simon himself also believed; and when he was baptized he continued with Philip, and was amazed, seeing the miracles and signs which were done.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 16: Strategy Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>The Voice Of The Stranger</h2>
+                <p>This stranger's strategy must be understood so that he does not gain an advantage over us.</p>
+            </div>
+        </div>
+
+        <!-- Slide 17: 2 Corinthians 2:10-11 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">2 Corinthians 2:10-11 (NKJV)</span>
+                    <p><span class="verse-num">10</span> Now whom you forgive anything, I also forgive. For if indeed I have forgiven anything, I have forgiven that one for your sakes in the presence of Christ,</p>
+                    <p><span class="verse-num">11</span> lest Satan should take advantage of us; <strong>for we are not ignorant of his devices.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 18: satan operates by voice -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>satan operates his enterprise of deceit <strong>FIRST BY HIS VOICE</strong>.</p>
+                <p>This is what confuses many people because we are told he disguises himself as an angel of light.</p>
+                <p>We see this in the Garden of Eden.</p>
+            </div>
+        </div>
+
+        <!-- Slide 19: Genesis 3:1-3 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 3:1-3 (NKJV)</span>
+                    <p><span class="verse-num">1</span> Now the serpent was more cunning than any beast of the field which the Lord God had made. And he said to the woman, "Has God indeed said, 'You shall not eat of every tree of the garden'?"</p>
+                    <p><span class="verse-num">2</span> And the woman said to the serpent, "We may eat the fruit of the trees of the garden;</p>
+                    <p><span class="verse-num">3</span> but of the fruit of the tree which is in the midst of the garden, God has said, 'You shall not eat it, nor shall you touch it, lest you die.'"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 20: Genesis 3:4-5 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 3:4-5 (NKJV)</span>
+                    <p><span class="verse-num">4</span> Then the serpent said to the woman, <strong>"You shall not surely die.</strong></p>
+                    <p><span class="verse-num">5</span> For God knows that in the day you eat of it your eyes will be opened, and you will be like God, knowing good and evil."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 21: Genesis 3:6-7 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 3:6-7 (NKJV)</span>
+                    <p><span class="verse-num">6</span> So when the woman saw that the tree was good for food, that it was pleasant to the eyes, and a tree desirable to make one wise, she took of its fruit and ate. She also gave to her husband with her, and he ate.</p>
+                    <p><span class="verse-num">7</span> Then the eyes of both of them were opened, and they knew that they were naked; and they sewed fig leaves together and made themselves coverings.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 22: Genesis 3:8-10 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 3:8-10 (NKJV)</span>
+                    <p><span class="verse-num">8</span> And they heard the sound of the Lord God walking in the garden in the cool of the day, and Adam and his wife hid themselves from the presence of the Lord God among the trees of the garden.</p>
+                    <p><span class="verse-num">9</span> Then the Lord God called to Adam and said to him, "Where are you?"</p>
+                    <p><span class="verse-num">10</span> So he said, <strong>"I heard Your voice in the garden, and I was afraid</strong> because I was naked; and I hid myself."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 23: Genesis 3:11-13 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 3:11-13 (NKJV)</span>
+                    <p><span class="verse-num">11</span> And He said, "Who told you that you were naked? Have you eaten from the tree of which I commanded you that you should not eat?"</p>
+                    <p><span class="verse-num">12</span> Then the man said, "The woman whom You gave to be with me, she gave me of the tree, and I ate."</p>
+                    <p><span class="verse-num">13</span> And the Lord God said to the woman, "What is this you have done?" The woman said, "The serpent deceived me, and I ate."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 24: Key Point -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>The Lord's voice rattled the corruption of the stranger's voice they had listened to.</p>
+                <p>The stranger's voice aims to <strong>deceive, subvert, and create rebellion</strong> in those who listen to him.</p>
+            </div>
+        </div>
+
+        <!-- Slide 25: Warfare Principle -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>In warfare, you must have some knowledge about how the enemy operates in order to successfully defend and counter their attack.</p>
+                <p>We must not give any opportunity to the devil to use his voice to deceive us. We cannot afford to be ignorant of his devices.</p>
+            </div>
+        </div>
+
+        <!-- Slide 26: Ephesians 4:27-30 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Ephesians 4:27-30 (NKJV)</span>
+                    <p><span class="verse-num">27</span> nor give place to the devil.</p>
+                    <p><span class="verse-num">28</span> Let him who stole steal no longer, but rather let him labor, working with his hands what is good, that he may have something to give him who has need.</p>
+                    <p><span class="verse-num">29</span> Let no corrupt word proceed out of your mouth, but what is good for necessary edification, that it may impart grace to the hearers.</p>
+                    <p><span class="verse-num">30</span> And do not grieve the Holy Spirit of God, by whom you were sealed for the day of redemption.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 27: Ephesians 6:10-11 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Ephesians 6:10-11 (NKJV)</span>
+                    <p><span class="verse-num">10</span> Finally, my brethren, be strong in the Lord and in the power of His might.</p>
+                    <p><span class="verse-num">11</span> <strong>Put on the whole armor of God,</strong> that you may be able to stand against the wiles of the devil.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 28: Ephesians 6:12-13 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Ephesians 6:12-13 (NKJV)</span>
+                    <p><span class="verse-num">12</span> For we do not wrestle against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this age, against spiritual hosts of wickedness in the heavenly places.</p>
+                    <p><span class="verse-num">13</span> Therefore take up the whole armor of God, that you may be able to withstand in the evil day, and having done all, to stand.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 29: Discerning Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Discerning The Voice<br>Of The Stranger</h2>
+                <p>We cannot discern the voice of the enemy if we walk in darkness.</p>
+                <p>We <strong>MUST</strong> walk in the light!</p>
+            </div>
+        </div>
+
+        <!-- Slide 30: Ephesians 5:1-5 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Ephesians 5:1-5 (NKJV)</span>
+                    <p><span class="verse-num">1</span> Therefore be imitators of God as dear children.</p>
+                    <p><span class="verse-num">2</span> And walk in love, as Christ also has loved us and given Himself for us, an offering and a sacrifice to God for a sweet-smelling aroma.</p>
+                    <p><span class="verse-num">3</span> But fornication and all uncleanness or covetousness, let it not even be named among you, as is fitting for saints;</p>
+                    <p><span class="verse-num">4</span> neither filthiness, nor foolish talking, nor coarse jesting, which are not fitting, but rather giving of thanks.</p>
+                    <p><span class="verse-num">5</span> For this you know, that no fornicator, unclean person, nor covetous man, who is an idolater, has any inheritance in the kingdom of Christ and God.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 31: Ephesians 5:6-10 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Ephesians 5:6-10 (NKJV)</span>
+                    <p><span class="verse-num">6</span> Let no one deceive you with empty words, for because of these things the wrath of God comes upon the sons of disobedience.</p>
+                    <p><span class="verse-num">7</span> Therefore do not be partakers with them.</p>
+                    <p><span class="verse-num">8</span> <strong>For you were once darkness, but now you are light in the Lord. Walk as children of light</strong></p>
+                    <p><span class="verse-num">9</span> (for the fruit of the Spirit is in all goodness, righteousness, and truth),</p>
+                    <p><span class="verse-num">10</span> finding out what is acceptable to the Lord.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 32: Ephesians 5:11-14 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Ephesians 5:11-14 (NKJV)</span>
+                    <p><span class="verse-num">11</span> And have no fellowship with the unfruitful works of darkness, but rather expose them.</p>
+                    <p><span class="verse-num">12</span> For it is shameful even to speak of those things which are done by them in secret.</p>
+                    <p><span class="verse-num">13</span> But all things that are exposed are made manifest by the light, for whatever makes manifest is light.</p>
+                    <p><span class="verse-num">14</span> Therefore He says: <strong>"Awake, you who sleep, arise from the dead, and Christ will give you light."</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 33: Ephesians 5:15-18 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Ephesians 5:15-18 (NKJV)</span>
+                    <p><span class="verse-num">15</span> See then that you walk circumspectly, not as fools but as wise,</p>
+                    <p><span class="verse-num">16</span> redeeming the time, because the days are evil.</p>
+                    <p><span class="verse-num">17</span> Therefore do not be unwise, but understand what the will of the Lord is.</p>
+                    <p><span class="verse-num">18</span> And do not be drunk with wine, in which is dissipation; <strong>but be filled with the Spirit,</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 34: Ephesians 5:19-21 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Ephesians 5:19-21 (NKJV)</span>
+                    <p><span class="verse-num">19</span> speaking to one another in psalms and hymns and spiritual songs, singing and making melody in your heart to the Lord,</p>
+                    <p><span class="verse-num">20</span> giving thanks always for all things to God the Father in the name of our Lord Jesus Christ,</p>
+                    <p><span class="verse-num">21</span> submitting to one another in the fear of God.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 35: Resisting Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Resisting The Stranger's Voice</h2>
+                <p>We have been provided with sufficient grace to defeat the enemy.</p>
+                <p>In fact, the enemy is a <strong>defeated foe</strong>. You must remember that.</p>
+            </div>
+        </div>
+
+        <!-- Slide 36: Colossians 2:11-13 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Colossians 2:11-13 (NKJV)</span>
+                    <p><span class="verse-num">11</span> In Him you were also circumcised with the circumcision made without hands, by putting off the body of the sins of the flesh, by the circumcision of Christ,</p>
+                    <p><span class="verse-num">12</span> buried with Him in baptism, in which you also were raised with Him through faith in the working of God, who raised Him from the dead.</p>
+                    <p><span class="verse-num">13</span> And you, being dead in your trespasses and the uncircumcision of your flesh, He has made alive together with Him, having forgiven you all trespasses,</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 37: Colossians 2:14-15 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Colossians 2:14-15 (NKJV)</span>
+                    <p><span class="verse-num">14</span> having wiped out the handwriting of requirements that was against us, which was contrary to us. And He has taken it out of the way, having nailed it to the cross.</p>
+                    <p><span class="verse-num">15</span> <strong>Having disarmed principalities and powers, He made a public spectacle of them, triumphing over them in it.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 38: James 4:7-8 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">James 4:7-8 (NKJV)</span>
+                    <p><span class="verse-num">7</span> Therefore submit to God. <strong>Resist the devil and he will flee from you.</strong></p>
+                    <p><span class="verse-num">8</span> Draw near to God and He will draw near to you. Cleanse your hands, you sinners; and purify your hearts, you double-minded.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 39: Eve's Mistake -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>Eve entertained the stranger's voice through the serpent, offering a <strong>"better than this life"</strong> than what God had already provided.</p>
+                <p>The devil continues today to offer a <strong>"better than this life"</strong> through lying, covetousness, stealing, cheating, murder, adultery, fornication, and idol worship.</p>
+            </div>
+        </div>
+
+        <!-- Slide 40: 10 Things (1-5) -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>10 Things We Should Do<br>To Resist The Devil</h2>
+                <ol>
+                    <li>Be familiar with the Lord's voice by immersing ourselves in His word</li>
+                    <li>Refusing and rejecting the stranger's voice</li>
+                    <li>Being filled with the Holy Spirit through prayer, fasting, scripture reading, study, and meditation</li>
+                    <li>Submitting to one another in the fear of God</li>
+                    <li>Obeying the word of God</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Slide 41: 10 Things (6-10) -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>10 Things (continued)</h2>
+                <ol start="6">
+                    <li>Speaking Psalms, Hymns, and spiritual songs</li>
+                    <li>Make church attendance a priority</li>
+                    <li>Ask for prayer when needed</li>
+                    <li>Be a worshipper of God all round (satan can't stand that)</li>
+                    <li>Cast out devils</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Slide 42: Conclusion -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Conclusion</h2>
+                <p>The most important skill in our Christian walk and work is hearing and acting on the Father's voice through His Holy Spirit.</p>
+            </div>
+        </div>
+
+        <!-- Slide 43: 1 Samuel 3:1-6 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 3:1-6 (NKJV)</span>
+                    <p><span class="verse-num">1</span> Now the boy Samuel ministered to the Lord before Eli. And the word of the Lord was rare in those days; there was no widespread revelation.</p>
+                    <p><span class="verse-num">2-3</span> And it came to pass at that time, while Eli was lying down in his place, and when his eyes had begun to grow dim so that he could not see, and before the lamp of God went out in the tabernacle of the Lord where the ark of God was, and while Samuel was lying down,</p>
+                    <p><span class="verse-num">4</span> that the Lord called Samuel. And he answered, "Here I am!"</p>
+                    <p><span class="verse-num">5</span> So he ran to Eli and said, "Here I am, for you called me." And he said, "I did not call; lie down again." And he went and lay down.</p>
+                    <p><span class="verse-num">6</span> Then the Lord called yet again, "Samuel!" So Samuel arose and went to Eli, and said, "Here I am, for you called me." He answered, "I did not call, my son; lie down again."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 44: 1 Samuel 3:7-11 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 3:7-11 (NKJV)</span>
+                    <p><span class="verse-num">7</span> (Now Samuel did not yet know the Lord, nor was the word of the Lord yet revealed to him.)</p>
+                    <p><span class="verse-num">8</span> And the Lord called Samuel again the third time. So he arose and went to Eli, and said, "Here I am, for you did call me." Then Eli perceived that the Lord had called the boy.</p>
+                    <p><span class="verse-num">9</span> Therefore Eli said to Samuel, <strong>"Go, lie down; and it shall be, if He calls you, that you must say, 'Speak, Lord, for Your servant hears.'"</strong> So Samuel went and lay down in his place.</p>
+                    <p><span class="verse-num">10</span> Now the Lord came and stood and called as at other times, "Samuel! Samuel!" And Samuel answered, <strong>"Speak, for Your servant hears."</strong></p>
+                    <p><span class="verse-num">11</span> Then the Lord said to Samuel: "Behold, I will do something in Israel at which both ears of everyone who hears it will tingle."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 45: Declaration -->
+        <div class="slide">
+            <div class="slide-content">
+                <p style="font-size: 2em; line-height: 1.6;"><strong>"We know the voice of our Lord Jesus. The voice of a stranger we will not hear."</strong></p>
+            </div>
+        </div>
+
+        <!-- Slide 46: Session 3 Preview -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Session 3 Examines</h2>
+                <p style="font-size: 1.6em; margin-top: 30px;">"Developing Your Hearing"</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-counter" id="slideCounter">1 / 46</div>
+    <div class="nav-hint">Use arrow keys to navigate</div>
+    <a href="Session-2.html" style="position: fixed; top: 20px; right: 30px; font-family: Arial, sans-serif; font-size: 0.9em; color: #8b7355; text-decoration: none; padding: 8px 16px; background: white; border: 1px solid #ddd; border-radius: 4px;">View as Page</a>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+        const slideCounter = document.getElementById('slideCounter');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= slides.length) index = slides.length - 1;
+
+            slides[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = progress + '%';
+
+            slideCounter.textContent = (currentSlide + 1) + ' / ' + slides.length;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                showSlide(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                showSlide(slides.length - 1);
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            const x = e.clientX;
+            const width = window.innerWidth;
+            if (x > width / 2) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        });
+
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        });
+
+        showSlide(0);
+    </script>
+</body>
+</html>

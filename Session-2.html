@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing God's Voice - Session 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #fafafa;
+            color: #2c2c2c;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px 100px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 0 60px;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 70px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: normal;
+            margin-bottom: 0.3em;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.75em;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 2.4em;
+            font-weight: normal;
+            margin: 70px 0 30px;
+            color: #333;
+            line-height: 1.3;
+            padding-top: 40px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        h3 {
+            font-size: 1.75em;
+            font-weight: normal;
+            margin: 50px 0 20px;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        p {
+            font-size: 1.44em;
+            line-height: 1.9;
+            margin-bottom: 1.3em;
+            color: #3a3a3a;
+        }
+
+        .scripture {
+            font-style: italic;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ececec 100%);
+            padding: 35px 40px;
+            border-left: 4px solid #8b7355;
+            margin: 35px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .scripture p {
+            font-size: 1.375em;
+            line-height: 2;
+            margin-bottom: 1.1em;
+        }
+
+        .scripture p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scripture-ref {
+            font-style: normal;
+            font-weight: bold;
+            color: #6b5344;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+
+        .verse-num {
+            font-weight: bold;
+            color: #8b7355;
+            font-style: normal;
+            margin-right: 3px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 30px 0;
+        }
+
+        ul li {
+            font-size: 1.44em;
+            line-height: 1.8;
+            margin-bottom: 0.9em;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "\2022";
+            color: #8b7355;
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        ol {
+            padding-left: 28px;
+            margin: 30px 0;
+        }
+
+        ol li {
+            font-size: 1.44em;
+            line-height: 1.8;
+            margin-bottom: 0.9em;
+            padding-left: 8px;
+            color: #3a3a3a;
+        }
+
+        ol li::marker {
+            color: #8b7355;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin-bottom: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .toc {
+            margin-bottom: 60px;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .toc ol {
+            padding-left: 24px;
+            margin: 20px 0;
+        }
+
+        .toc ol li {
+            font-size: 1.25em;
+            line-height: 1.7;
+            margin-bottom: 0.5em;
+            color: #3a3a3a;
+        }
+
+        .toc ol li a {
+            color: #6b5344;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .toc ol li a:hover {
+            color: #8b7355;
+            text-decoration: underline;
+        }
+
+        .anchor-scripture {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 60px;
+        }
+
+        .anchor-scripture .scripture {
+            display: inline-block;
+            text-align: left;
+            max-width: 700px;
+        }
+
+        .highlight-text {
+            font-weight: bold;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9em;
+        }
+
+        .nav-links a {
+            color: #8b7355;
+            text-decoration: none;
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #f5f5f5;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 24px 80px;
+            }
+
+            header {
+                padding: 50px 0 40px;
+                margin-bottom: 50px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.9em;
+                margin: 50px 0 25px;
+                padding-top: 30px;
+            }
+
+            h3 {
+                margin: 40px 0 18px;
+            }
+
+            p, ul li, ol li {
+                font-size: 1.25em;
+            }
+
+            .scripture {
+                padding: 25px 20px;
+                margin: 25px 0;
+            }
+
+            .scripture p {
+                font-size: 1.15em;
+            }
+
+            .nav-links {
+                position: static;
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="Session-2-Slides.html">View as Slides</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Hearing God's Voice</h1>
+            <p class="subtitle">Session 2: The Voice Of The Stranger</p>
+        </header>
+
+        <div class="anchor-scripture">
+            <div class="scripture">
+                <span class="scripture-ref">John 10:5 (NKJV)</span>
+                <p><span class="verse-num">5</span> "Yet they will by no means follow a stranger, but will flee from him, for they do not know the voice of strangers."</p>
+            </div>
+        </div>
+
+        <h2 id="holy-spirit">The Holy Spirit</h2>
+        <p>Jesus taught that His sheep hear His voice and that the voice of a stranger they will not hear. He stated that we would FLEE from a stranger's voice.</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">John 10:1-6 (NKJV)</span>
+            <p><span class="verse-num">1</span> "Most assuredly, I say to you, he who does not enter the sheepfold by the door, but climbs up some other way, the same is a thief and a robber.</p>
+            <p><span class="verse-num">2</span> But he who enters by the door is the shepherd of the sheep.</p>
+            <p><span class="verse-num">3</span> To him the doorkeeper opens, and the sheep hear his voice; and he calls his own sheep by name and leads them out.</p>
+            <p><span class="verse-num">4</span> And when he brings out his own sheep, he goes before them; and the sheep follow him, for they know his voice.</p>
+            <p><span class="verse-num">5</span> Yet they will by no means follow a stranger, but will flee from him, for they do not know the voice of strangers."</p>
+            <p><span class="verse-num">6</span> Jesus used this illustration, but they did not understand the things which He spoke to them.</p>
+        </div>
+
+        <p>The voice of a stranger is unfamiliar. Jesus sent His Holy Spirit to teach, comfort, empower, and guide us into all truth. Most of the time it is the voice of the Holy Spirit we hear as believers.</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">John 14:15-18 (NKJV)</span>
+            <p><span class="verse-num">15</span> "If you love Me, keep My commandments.</p>
+            <p><span class="verse-num">16</span> And I will pray the Father, and He will give you another Helper, that He may abide with you forever—</p>
+            <p><span class="verse-num">17</span> the Spirit of truth, whom the world cannot receive, because it neither sees Him nor knows Him; but you know Him, for He dwells with you and will be in you.</p>
+            <p><span class="verse-num">18</span> I will not leave you orphans; I will come to you."</p>
+        </div>
+
+        <h2 id="who-is-stranger">Who Is The Stranger?</h2>
+        <p>The stranger is the devil. Jesus taught us that he comes to steal, kill, and destroy.</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">John 10:7-10 (NKJV)</span>
+            <p><span class="verse-num">7</span> Then Jesus said to them again, "Most assuredly, I say to you, I am the door of the sheep.</p>
+            <p><span class="verse-num">8</span> All who ever came before Me are thieves and robbers, but the sheep did not hear them.</p>
+            <p><span class="verse-num">9</span> I am the door. If anyone enters by Me, he will be saved, and will go in and out and find pasture.</p>
+            <p><span class="verse-num">10</span> The thief does not come except to steal, and to kill, and to destroy. <strong>I have come that they may have life, and that they may have it more abundantly.</strong>"</p>
+        </div>
+
+        <p>The devil was an archangel in heaven by the name Lucifer, who lost his place due to pride and wanting the Holy Throne for himself. You can read about this on your own in Isaiah 14:12-15 and Ezekiel 28:11-19 for a learning exercise.</p>
+
+        <h3>The Stranger's Other Common Names</h3>
+        <p>Thief, father of lies, murderer from the beginning, that old serpent, the dragon, prince of the power of the air, deceiver, the accuser, Beelzebub (lord of the flies), satan, the tempter. He is a stranger to you and me as children of God because he is evil, and God our Father is righteous. He is of darkness, and we are of the Light.</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">John 8:12 (NKJV)</span>
+            <p>Then Jesus spoke to them again, saying, <strong>"I am the light of the world. He who follows Me shall not walk in darkness, but have the light of life."</strong></p>
+        </div>
+
+        <h2 id="cohorts">The Stranger's Cohorts</h2>
+        <p>The stranger has cohorts, and these are evil spirits (fallen angels, demons, devils), and humans who elect to serve the devil knowingly or ignorantly.</p>
+
+        <h3>Elymas the Sorcerer</h3>
+        <div class="scripture">
+            <span class="scripture-ref">Acts 13:8-12 (NKJV)</span>
+            <p><span class="verse-num">8</span> But Elymas the sorcerer (for so his name is translated) withstood them, seeking to turn the proconsul away from the faith.</p>
+            <p><span class="verse-num">9</span> Then Saul, who also is called Paul, filled with the Holy Spirit, looked intently at him</p>
+            <p><span class="verse-num">10</span> and said, "O full of all deceit and all fraud, you son of the devil, you enemy of all righteousness, will you not cease perverting the straight ways of the Lord?</p>
+            <p><span class="verse-num">11</span> And now, indeed, the hand of the Lord is upon you, and you shall be blind, not seeing the sun for a time." And immediately a dark mist fell on him, and he went around seeking someone to lead him by the hand.</p>
+            <p><span class="verse-num">12</span> Then the proconsul believed, when he saw what had been done, being astonished at the teaching of the Lord.</p>
+        </div>
+
+        <h3>Simon the Sorcerer of Samaria</h3>
+        <div class="scripture">
+            <span class="scripture-ref">Acts 8:4-13 (NKJV)</span>
+            <p><span class="verse-num">4-6</span> Therefore those who were scattered went everywhere preaching the word. Then Philip went down to the city of Samaria and preached Christ to them. And the multitudes with one accord heeded the things spoken by Philip, hearing and seeing the miracles which he did.</p>
+            <p><span class="verse-num">7-8</span> For unclean spirits, crying with a loud voice, came out of many who were possessed; and many who were paralyzed and lame were healed. And there was great joy in that city.</p>
+            <p><span class="verse-num">9-10</span> But there was a certain man called Simon, who previously practiced sorcery in the city and astonished the people of Samaria, claiming that he was someone great, to whom they all gave heed, from the least to the greatest, saying, "This man is the great power of God."</p>
+            <p><span class="verse-num">11</span> And they heeded him because he had astonished them with his sorceries for a long time.</p>
+            <p><span class="verse-num">12</span> But when they believed Philip as he preached the things concerning the kingdom of God and the name of Jesus Christ, both men and women were baptized.</p>
+            <p><span class="verse-num">13</span> Then Simon himself also believed; and when he was baptized he continued with Philip, and was amazed, seeing the miracles and signs which were done.</p>
+        </div>
+
+        <h2 id="voice-of-stranger">The Voice Of The Stranger</h2>
+        <p>This stranger's strategy must be understood so that he does not gain an advantage over us.</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">2 Corinthians 2:10-11 (NKJV)</span>
+            <p><span class="verse-num">10</span> Now whom you forgive anything, I also forgive. For if indeed I have forgiven anything, I have forgiven that one for your sakes in the presence of Christ,</p>
+            <p><span class="verse-num">11</span> lest Satan should take advantage of us; <strong>for we are not ignorant of his devices.</strong></p>
+        </div>
+
+        <p>satan operates his enterprise of deceit <strong>FIRST BY HIS VOICE</strong>. This is what confuses many people because we are told he disguises himself as an angel of light. We see this in the Garden of Eden.</p>
+
+        <h3>The Garden of Eden</h3>
+        <div class="scripture">
+            <span class="scripture-ref">Genesis 3:1-13 (NKJV)</span>
+            <p><span class="verse-num">1</span> Now the serpent was more cunning than any beast of the field which the Lord God had made. And he said to the woman, "Has God indeed said, 'You shall not eat of every tree of the garden'?"</p>
+            <p><span class="verse-num">2-3</span> And the woman said to the serpent, "We may eat the fruit of the trees of the garden; but of the fruit of the tree which is in the midst of the garden, God has said, 'You shall not eat it, nor shall you touch it, lest you die.'"</p>
+            <p><span class="verse-num">4-5</span> Then the serpent said to the woman, <strong>"You shall not surely die.</strong> For God knows that in the day you eat of it your eyes will be opened, and you will be like God, knowing good and evil."</p>
+            <p><span class="verse-num">6-7</span> So when the woman saw that the tree was good for food, that it was pleasant to the eyes, and a tree desirable to make one wise, she took of its fruit and ate. She also gave to her husband with her, and he ate. Then the eyes of both of them were opened, and they knew that they were naked; and they sewed fig leaves together and made themselves coverings.</p>
+            <p><span class="verse-num">8-10</span> And they heard the sound of the Lord God walking in the garden in the cool of the day, and Adam and his wife hid themselves from the presence of the Lord God among the trees of the garden. Then the Lord God called to Adam and said to him, "Where are you?" So he said, <strong>"I heard Your voice in the garden, and I was afraid</strong> because I was naked; and I hid myself."</p>
+            <p><span class="verse-num">11-13</span> And He said, "Who told you that you were naked? Have you eaten from the tree of which I commanded you that you should not eat?" Then the man said, "The woman whom You gave to be with me, she gave me of the tree, and I ate." And the Lord God said to the woman, "What is this you have done?" The woman said, "The serpent deceived me, and I ate."</p>
+        </div>
+
+        <p>The Lord's voice rattled the corruption of the stranger's voice they had listened to. The stranger's voice aims to deceive, subvert, and create rebellion in those who listen to him.</p>
+
+        <p>In warfare, it is understood that you must have some knowledge about how the enemy operates in order to successfully defend and counter their attack. We must not give any opportunity to the devil to use his voice to deceive us.</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Ephesians 4:27-30 (NKJV)</span>
+            <p><span class="verse-num">27</span> nor give place to the devil.</p>
+            <p><span class="verse-num">28</span> Let him who stole steal no longer, but rather let him labor, working with his hands what is good, that he may have something to give him who has need.</p>
+            <p><span class="verse-num">29</span> Let no corrupt word proceed out of your mouth, but what is good for necessary edification, that it may impart grace to the hearers.</p>
+            <p><span class="verse-num">30</span> And do not grieve the Holy Spirit of God, by whom you were sealed for the day of redemption.</p>
+        </div>
+
+        <div class="scripture">
+            <span class="scripture-ref">Ephesians 6:10-13 (NKJV)</span>
+            <p><span class="verse-num">10</span> Finally, my brethren, be strong in the Lord and in the power of His might.</p>
+            <p><span class="verse-num">11</span> <strong>Put on the whole armor of God,</strong> that you may be able to stand against the wiles of the devil.</p>
+            <p><span class="verse-num">12</span> For we do not wrestle against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this age, against spiritual hosts of wickedness in the heavenly places.</p>
+            <p><span class="verse-num">13</span> Therefore take up the whole armor of God, that you may be able to withstand in the evil day, and having done all, to stand.</p>
+        </div>
+
+        <h2 id="discerning">Discerning The Voice Of The Stranger</h2>
+        <p>We cannot discern the voice of the enemy if we walk in darkness. We MUST walk in the light!</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Ephesians 5:1-21 (NKJV)</span>
+            <p><span class="verse-num">1-2</span> Therefore be imitators of God as dear children. And walk in love, as Christ also has loved us and given Himself for us, an offering and a sacrifice to God for a sweet-smelling aroma.</p>
+            <p><span class="verse-num">3-5</span> But fornication and all uncleanness or covetousness, let it not even be named among you, as is fitting for saints; neither filthiness, nor foolish talking, nor coarse jesting, which are not fitting, but rather giving of thanks. For this you know, that no fornicator, unclean person, nor covetous man, who is an idolater, has any inheritance in the kingdom of Christ and God.</p>
+            <p><span class="verse-num">6-7</span> Let no one deceive you with empty words, for because of these things the wrath of God comes upon the sons of disobedience. Therefore do not be partakers with them.</p>
+            <p><span class="verse-num">8-10</span> <strong>For you were once darkness, but now you are light in the Lord. Walk as children of light</strong> (for the fruit of the Spirit is in all goodness, righteousness, and truth), finding out what is acceptable to the Lord.</p>
+            <p><span class="verse-num">11-14</span> And have no fellowship with the unfruitful works of darkness, but rather expose them. For it is shameful even to speak of those things which are done by them in secret. But all things that are exposed are made manifest by the light, for whatever makes manifest is light. Therefore He says: "Awake, you who sleep, arise from the dead, and Christ will give you light."</p>
+            <p><span class="verse-num">15-18</span> See then that you walk circumspectly, not as fools but as wise, redeeming the time, because the days are evil. Therefore do not be unwise, but understand what the will of the Lord is. And do not be drunk with wine, in which is dissipation; but be filled with the Spirit,</p>
+            <p><span class="verse-num">19-21</span> speaking to one another in psalms and hymns and spiritual songs, singing and making melody in your heart to the Lord, giving thanks always for all things to God the Father in the name of our Lord Jesus Christ, submitting to one another in the fear of God.</p>
+        </div>
+
+        <h2 id="resisting">Resisting The Stranger's Voice</h2>
+        <p>We have been provided with sufficient grace to defeat the enemy. In fact, the enemy is a defeated foe. You must remember that.</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Colossians 2:11-15 (NKJV)</span>
+            <p><span class="verse-num">11</span> In Him you were also circumcised with the circumcision made without hands, by putting off the body of the sins of the flesh, by the circumcision of Christ,</p>
+            <p><span class="verse-num">12</span> buried with Him in baptism, in which you also were raised with Him through faith in the working of God, who raised Him from the dead.</p>
+            <p><span class="verse-num">13</span> And you, being dead in your trespasses and the uncircumcision of your flesh, He has made alive together with Him, having forgiven you all trespasses,</p>
+            <p><span class="verse-num">14</span> having wiped out the handwriting of requirements that was against us, which was contrary to us. And He has taken it out of the way, having nailed it to the cross.</p>
+            <p><span class="verse-num">15</span> <strong>Having disarmed principalities and powers, He made a public spectacle of them, triumphing over them in it.</strong></p>
+        </div>
+
+        <p>We are to submit to God first and then resist the devil.</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">James 4:7-8 (NKJV)</span>
+            <p><span class="verse-num">7</span> Therefore submit to God. <strong>Resist the devil and he will flee from you.</strong></p>
+            <p><span class="verse-num">8</span> Draw near to God and He will draw near to you. Cleanse your hands, you sinners; and purify your hearts, you double-minded.</p>
+        </div>
+
+        <p>Eve entertained the stranger's voice through the serpent, offering a <strong>"better than this life"</strong> than what God had already provided. The devil continues today to offer a <strong>"better than this life"</strong> through lying, covetousness, stealing, cheating, murder, adultery, fornication, and idol worship.</p>
+
+        <h2 id="ten-things">10 Things We Should Do To Resist The Devil</h2>
+        <ol>
+            <li>Be familiar with the Lord's voice (Holy Spirit) by immersing ourselves in His word</li>
+            <li>Refusing and rejecting the stranger's voice</li>
+            <li>Being filled with the Holy Spirit through the disciplines of prayer, fasting, scripture reading, study, and meditation</li>
+            <li>Submitting to one another in the fear of God</li>
+            <li>Obeying the word of God</li>
+            <li>Speaking Psalms, Hymns, and spiritual songs</li>
+            <li>Make church attendance a priority</li>
+            <li>Ask for prayer when needed</li>
+            <li>Be a worshipper of God all round (satan can't stand that)</li>
+            <li>Cast out devils</li>
+        </ol>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>The most important skill in our Christian walk and work is hearing and acting on the Father's voice through His Holy Spirit. To buttress this, Jesus taught that we should LABOUR for the meat that does not perish. Despite being in the temple and learning the priestly responsibilities, young Samuel, the trainee priest, didn't yet know the voice of the Lord. Eli, the Chief Priest, taught him the most valuable lesson in his life.</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">1 Samuel 3:1-11 (NKJV)</span>
+            <p><span class="verse-num">1-4</span> Now the boy Samuel ministered to the Lord before Eli. And the word of the Lord was rare in those days; there was no widespread revelation. And it came to pass at that time, while Eli was lying down in his place, and when his eyes had begun to grow dim so that he could not see, and before the lamp of God went out in the tabernacle of the Lord where the ark of God was, and while Samuel was lying down, that the Lord called Samuel. And he answered, "Here I am!"</p>
+            <p><span class="verse-num">5-7</span> So he ran to Eli and said, "Here I am, for you called me." And he said, "I did not call; lie down again." And he went and lay down. Then the Lord called yet again, "Samuel!" So Samuel arose and went to Eli, and said, "Here I am, for you called me." He answered, "I did not call, my son; lie down again." (Now Samuel did not yet know the Lord, nor was the word of the Lord yet revealed to him.)</p>
+            <p><span class="verse-num">8-9</span> And the Lord called Samuel again the third time. So he arose and went to Eli, and said, "Here I am, for you did call me." Then Eli perceived that the Lord had called the boy. Therefore Eli said to Samuel, <strong>"Go, lie down; and it shall be, if He calls you, that you must say, 'Speak, Lord, for Your servant hears.'"</strong> So Samuel went and lay down in his place.</p>
+            <p><span class="verse-num">10-11</span> Now the Lord came and stood and called as at other times, "Samuel! Samuel!" And Samuel answered, <strong>"Speak, for Your servant hears."</strong> Then the Lord said to Samuel: "Behold, I will do something in Israel at which both ears of everyone who hears it will tingle."</p>
+        </div>
+
+        <p><strong>"We know the voice of our Lord Jesus. The voice of a stranger we will not hear."</strong></p>
+
+        <h2>Session 3 Examines</h2>
+        <p>"Developing Your Hearing"</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing God's Voice - Course</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #fafafa;
+            color: #2c2c2c;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px 100px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 0 60px;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 70px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: normal;
+            margin-bottom: 0.3em;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #666;
+            margin-top: 0.5em;
+        }
+
+        .intro {
+            font-size: 1.44em;
+            line-height: 1.9;
+            color: #3a3a3a;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .sessions {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .session-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 40px;
+            background: #fff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .session-card:hover {
+            border-color: #8b7355;
+            box-shadow: 0 2px 12px rgba(139, 115, 85, 0.1);
+        }
+
+        .session-number {
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #8b7355;
+            margin-bottom: 8px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .session-title {
+            font-size: 2em;
+            font-weight: normal;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .session-description {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .session-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .session-links a {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.95em;
+            color: #6b5344;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #d0c4b8;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .session-links a:hover {
+            background: #8b7355;
+            color: #fff;
+            border-color: #8b7355;
+        }
+
+        .session-card.coming-soon {
+            opacity: 0.5;
+        }
+
+        .session-card.coming-soon .session-title {
+            color: #888;
+        }
+
+        .coming-soon-label {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.95em;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .scripture {
+            font-style: italic;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ececec 100%);
+            padding: 30px 35px;
+            border-left: 4px solid #8b7355;
+            margin: 0 auto 60px;
+            border-radius: 0 8px 8px 0;
+            max-width: 700px;
+        }
+
+        .scripture p {
+            font-size: 1.3em;
+            line-height: 1.9;
+            color: #3a3a3a;
+        }
+
+        .scripture-ref {
+            font-style: normal;
+            font-weight: bold;
+            color: #6b5344;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 24px 80px;
+            }
+
+            header {
+                padding: 50px 0 40px;
+                margin-bottom: 50px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .session-card {
+                padding: 28px 24px;
+            }
+
+            .session-title {
+                font-size: 1.6em;
+            }
+
+            .session-links {
+                flex-direction: column;
+            }
+
+            .session-links a {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hearing God's Voice</h1>
+            <p class="subtitle">A 5-Session Course</p>
+        </header>
+
+        <div class="scripture">
+            <span class="scripture-ref">John 10:27-28 (NKJV)</span>
+            <p>"My sheep hear My voice, and I know them, and they follow Me. And I give them eternal life, and they shall never perish; neither shall anyone snatch them out of My hand."</p>
+        </div>
+
+        <div class="sessions">
+            <div class="session-card">
+                <div class="session-number">Session 1</div>
+                <div class="session-title">Introduction and Overview</div>
+                <div class="session-description">God's voice from creation through scripture. Old and New Testament examples of God speaking, the authority of scripture, and 4 principal ways the Lord speaks to us.</div>
+                <div class="session-links">
+                    <a href="Session-1.html">Read</a>
+                    <a href="Session-1-Slides.html">Slides</a>
+                </div>
+            </div>
+
+            <div class="session-card">
+                <div class="session-number">Session 2</div>
+                <div class="session-title">The Voice Of The Stranger</div>
+                <div class="session-description">Understanding the enemy's voice, discerning and exposing deception, and resisting the devil's strategies through the power of the Holy Spirit.</div>
+                <div class="session-links">
+                    <a href="Session-2.html">Read</a>
+                    <a href="Session-2-Slides.html">Slides</a>
+                </div>
+            </div>
+
+            <div class="session-card coming-soon">
+                <div class="session-number">Session 3</div>
+                <div class="session-title">Developing Your Hearing</div>
+                <span class="coming-soon-label">Coming soon</span>
+            </div>
+
+            <div class="session-card coming-soon">
+                <div class="session-number">Session 4</div>
+                <div class="session-title">Coming Soon</div>
+                <span class="coming-soon-label">Coming soon</span>
+            </div>
+
+            <div class="session-card coming-soon">
+                <div class="session-number">Session 5</div>
+                <div class="session-title">Coming Soon</div>
+                <span class="coming-soon-label">Coming soon</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

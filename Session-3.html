@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing God's Voice - Session 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #fafafa;
+            color: #2c2c2c;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px 100px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 0 60px;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 70px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: normal;
+            margin-bottom: 0.3em;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.75em;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 2.4em;
+            font-weight: normal;
+            margin: 70px 0 30px;
+            color: #333;
+            line-height: 1.3;
+            padding-top: 40px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        h3 {
+            font-size: 1.75em;
+            font-weight: normal;
+            margin: 50px 0 20px;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        p {
+            font-size: 1.44em;
+            line-height: 1.9;
+            margin-bottom: 1.3em;
+            color: #3a3a3a;
+        }
+
+        .scripture {
+            font-style: italic;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ececec 100%);
+            padding: 35px 40px;
+            border-left: 4px solid #8b7355;
+            margin: 35px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .scripture p {
+            font-size: 1.375em;
+            line-height: 2;
+            margin-bottom: 1.1em;
+        }
+
+        .scripture p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scripture-ref {
+            font-style: normal;
+            font-weight: bold;
+            color: #6b5344;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+
+        .verse-num {
+            font-weight: bold;
+            color: #8b7355;
+            font-style: normal;
+            margin-right: 3px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 30px 0;
+        }
+
+        ul li {
+            font-size: 1.44em;
+            line-height: 1.8;
+            margin-bottom: 0.9em;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "\2022";
+            color: #8b7355;
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        ol {
+            padding-left: 28px;
+            margin: 30px 0;
+        }
+
+        ol li {
+            font-size: 1.44em;
+            line-height: 1.8;
+            margin-bottom: 0.9em;
+            padding-left: 8px;
+            color: #3a3a3a;
+        }
+
+        ol li::marker {
+            color: #8b7355;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin-bottom: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .toc {
+            margin-bottom: 60px;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .toc ol {
+            padding-left: 24px;
+            margin: 20px 0;
+        }
+
+        .toc ol li {
+            font-size: 1.25em;
+            line-height: 1.7;
+            margin-bottom: 0.5em;
+            color: #3a3a3a;
+        }
+
+        .toc ol li a {
+            color: #6b5344;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .toc ol li a:hover {
+            color: #8b7355;
+            text-decoration: underline;
+        }
+
+        .anchor-scripture {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 60px;
+        }
+
+        .anchor-scripture .scripture {
+            display: inline-block;
+            text-align: left;
+            max-width: 700px;
+        }
+
+        .highlight-text {
+            font-weight: bold;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .note {
+            background: #fff8f0;
+            border-left: 4px solid #d4a574;
+            padding: 25px 30px;
+            margin: 35px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .note p {
+            font-size: 1.3em;
+            color: #5a4a3a;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9em;
+        }
+
+        .nav-links a {
+            color: #8b7355;
+            text-decoration: none;
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #f5f5f5;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 24px 80px;
+            }
+
+            header {
+                padding: 50px 0 40px;
+                margin-bottom: 50px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.9em;
+                margin: 50px 0 25px;
+                padding-top: 30px;
+            }
+
+            h3 {
+                margin: 40px 0 18px;
+            }
+
+            p, ul li, ol li {
+                font-size: 1.25em;
+            }
+
+            .scripture {
+                padding: 25px 20px;
+                margin: 25px 0;
+            }
+
+            .scripture p {
+                font-size: 1.15em;
+            }
+
+            .nav-links {
+                position: static;
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="Session-3-Slides.html">View as Slides</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Hearing God's Voice</h1>
+            <p class="subtitle">Session 3: Dreams, Visions and Interpretations, Angelic Encounters</p>
+        </header>
+
+        <p>Angels ministered to Jesus, <strong>Mark 1:13</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Mark 1:13 (NKJV)</span>
+            <p>"And He was there in the wilderness forty days, tempted by Satan, and was with the wild beasts; and the angels ministered to Him."</p>
+        </div>
+
+        <p>An angel helped Jesus in deep prayer, <strong>Luke 22:41-44</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Luke 22:41-44 (NKJV)</span>
+            <p><span class="verse-num">41</span> And He was withdrawn from them about a stone's throw, and He knelt down and prayed,</p>
+            <p><span class="verse-num">42</span> saying, "Father, if it is Your will, take this cup away from Me; nevertheless not My will, but Yours, be done."</p>
+            <p><span class="verse-num">43</span> Then an angel appeared to Him from heaven, strengthening Him.</p>
+            <p><span class="verse-num">44</span> And being in agony, He prayed more earnestly. Then His sweat became like great drops of blood falling down to the ground.</p>
+        </div>
+
+        <h2>A Foundation For Engaging The Supernatural Realms Of God</h2>
+
+        <p>Martin Luther, a famous German monk, sparked the Reformation in 1517 by challenging the Catholic Church's practices, particularly the sale of indulgences, through his "95 Theses." This movement led to the establishment of Protestantism and significant changes in Christian practices across Europe. As a principal actor in the reformation, he taught on the subject of "the priesthood of every believer."</p>
+
+        <p>This was a truth kept from the church, based on the belief that the clergy (priests) were learned, while the people, the laity, relied on the priests for the interpretation of scripture.</p>
+
+        <p>Ray Stedman of Authentic Christianity captures it brilliantly: "In those days, the church taught that there was a body of men set aside to be a special group of priests who acted as a kind of intermediary between God and the rest of ordinary men, but Martin Luther exploded that idea. He taught from the Scriptures that there is no such body at all but that every person who comes to know Jesus Christ is constituted a priest under God and that he joins with the great high priest, Jesus Christ himself, in a ministry of mercy, blessing, and service to a world which is fragmented and bleeding and broken, that this is <em>our</em> ministry, this is the calling to which God has called <em>us</em>. That idea hit with radical impact in Europe as people began to catch on to the exciting adventure of being this kind of a priest unto God."</p>
+
+        <p>Moses, a Levite, was a priest, as was his brother Aaron. Jesus Christ was also called our Chief High Priest &mdash; Paul says Jesus is the perfect Mediator between God and man. Isn't that remarkable? It therefore follows that we are to walk in the footsteps of our High Priest. <strong>Hebrews 5:1-6</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Hebrews 5:1-6 (NKJV)</span>
+            <p><span class="verse-num">1</span> For every high priest taken from among men is appointed for men in things pertaining to God, that he may offer both gifts and sacrifices for sins.</p>
+            <p><span class="verse-num">2</span> He can have compassion on those who are ignorant and going astray, since he himself is also subject to weakness.</p>
+            <p><span class="verse-num">3</span> Because of this he is required as for the people, so also for himself, to offer sacrifices for sins.</p>
+            <p><span class="verse-num">4</span> And no man takes this honor to himself, but he who is called by God, just as Aaron was.</p>
+            <p><span class="verse-num">5</span> So also Christ did not glorify Himself to become High Priest, but it was He who said to Him: "You are My Son, Today I have begotten You."</p>
+            <p><span class="verse-num">6</span> As He also says in another place: "You are a priest forever According to the order of Melchizedek";</p>
+        </div>
+
+        <p>Brothers and sisters in Christ, we are a nation of Priests according to <strong>1 Peter 2:9,</strong> and we have been given kingly authority according to Revelation 1:5. If we agree and believe this to be true about our position, then we should be living and operating like priests indeed. Let us examine the functions of a priest as revealed in the scriptures.</p>
+
+        <div class="scripture">
+            <span class="scripture-ref">1 Peter 2:9 (NKJV)</span>
+            <p>"But you are a chosen generation, a royal priesthood, a holy nation, His own special people, that you may proclaim the praises of Him who called you out of darkness into His marvelous light;"</p>
+        </div>
+
+        <div class="scripture">
+            <span class="scripture-ref">Revelation 1:5 (NKJV)</span>
+            <p>"and from Jesus Christ, the faithful witness, the firstborn from the dead, and the ruler over the kings of the earth. To Him who loved us and washed us from our sins in His own blood,"</p>
+        </div>
+
+        <p>I believe the devil fights our continued journey from the reformation of the 1500s by working hard to make sure Christians are stunted in spiritual growth. And of course, the less we know about what The Father intends for us, the better it is for the enemy. WE ARE PRIESTS UNTO OUR GOD.</p>
+
+        <h2>The Essential Work Of A Priest</h2>
+
+        <ol>
+            <li>A priest is a MEDIATOR between God and all people.</li>
+            <li>A priest first offers sacrifices for himself, then for others.</li>
+            <li>A priest serves as an intermediary between God and His people, interceding first for their SPIRITUAL NEEDS. Applying this in New Testament practice, we are intercessors on behalf of one another.</li>
+        </ol>
+
+        <p>We, as priests, also serve as intermediaries between the nonbelieving (lost) world and God the Father, who wants all to be saved. Paul's message to Timothy captures this brilliantly in <strong>1 Timothy 2:1-10</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">1 Timothy 2:1-10 (NKJV)</span>
+            <p><span class="verse-num">1</span> Therefore I exhort first of all that supplications, prayers, intercessions, and giving of thanks be made for all men,</p>
+            <p><span class="verse-num">2</span> for kings and all who are in authority, that we may lead a quiet and peaceable life in all godliness and reverence.</p>
+            <p><span class="verse-num">3</span> For this is good and acceptable in the sight of God our Savior,</p>
+            <p><span class="verse-num">4</span> who desires all men to be saved and to come to the knowledge of the truth.</p>
+            <p><span class="verse-num">5</span> For there is one God and one Mediator between God and men, the Man Christ Jesus,</p>
+            <p><span class="verse-num">6</span> who gave Himself a ransom for all, to be testified in due time,</p>
+            <p><span class="verse-num">7</span> for which I was appointed a preacher and an apostle—I am speaking the truth in Christ and not lying—a teacher of the Gentiles in faith and truth.</p>
+            <p><span class="verse-num">8</span> I desire therefore that the men pray everywhere, lifting up holy hands, without wrath and doubting;</p>
+            <p><span class="verse-num">9</span> in like manner also, that the women adorn themselves in modest apparel, with propriety and moderation, not with braided hair or gold or pearls or costly clothing,</p>
+            <p><span class="verse-num">10</span> but, which is proper for women professing godliness, with good works.</p>
+        </div>
+
+        <p>As we live out our lives as priests unto our God, minding our priestly business, the natural should, at some point, flow into the supernatural.</p>
+
+        <div class="note">
+            <p><strong>Please Note:</strong> In New Testament practice, while we are all called to be priests performing the functions of worship, intercession, and giving of thanks on behalf of ourselves and others, some have been called to occupy OFFICES within the Church (body of Christ) with God-given authority to govern the church of God. <strong>1 Timothy 3:1-14</strong></p>
+        </div>
+
+        <div class="scripture">
+            <span class="scripture-ref">1 Timothy 3:1-14 (NKJV)</span>
+            <p><span class="verse-num">1</span> This is a faithful saying: If a man desires the position of a bishop, he desires a good work.</p>
+            <p><span class="verse-num">2</span> A bishop then must be blameless, the husband of one wife, temperate, sober-minded, of good behavior, hospitable, able to teach;</p>
+            <p><span class="verse-num">3</span> not given to wine, not violent, not greedy for money, but gentle, not quarrelsome, not covetous;</p>
+            <p><span class="verse-num">4-5</span> one who rules his own house well, having his children in submission with all reverence (for if a man does not know how to rule his own house, how will he take care of the church of God?);</p>
+            <p><span class="verse-num">6</span> not a novice, lest being puffed up with pride he fall into the same condemnation as the devil.</p>
+            <p><span class="verse-num">7</span> Moreover he must have a good testimony among those who are outside, lest he fall into reproach and the snare of the devil.</p>
+            <p><span class="verse-num">8</span> Likewise deacons must be reverent, not double-tongued, not given to much wine, not greedy for money,</p>
+            <p><span class="verse-num">9</span> holding the mystery of the faith with a pure conscience.</p>
+            <p><span class="verse-num">10</span> But let these also first be tested; then let them serve as deacons, being found blameless.</p>
+            <p><span class="verse-num">11</span> Likewise, their wives must be reverent, not slanderers, temperate, faithful in all things.</p>
+            <p><span class="verse-num">12</span> Let deacons be the husbands of one wife, ruling their children and their own houses well.</p>
+            <p><span class="verse-num">13</span> For those who have served well as deacons obtain for themselves a good standing and great boldness in the faith which is in Christ Jesus.</p>
+            <p><span class="verse-num">14</span> These things I write to you, though I hope to come to you shortly;</p>
+        </div>
+
+        <h2>300 BC Prophecy By Prophet Joel</h2>
+
+        <p>About 300 years before the birth of Jesus Christ, Prophet Joel uttered these famous words in <strong>Joel 2:28-29:</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Joel 2:28-29 (NKJV)</span>
+            <p><span class="verse-num">28</span> "And it shall come to pass afterward That I will pour out My Spirit on all flesh; Your sons and your daughters shall prophesy, Your old men shall dream dreams, Your young men shall see visions.</p>
+            <p><span class="verse-num">29</span> And also on My menservants and on My maidservants I will pour out My Spirit in those days."</p>
+        </div>
+
+        <p>This prophecy came to pass on the day of Pentecost in Jerusalem, and it has continued to be a defining phenomenon for the Church. Peter attested to this in <strong>Acts 2:14-18.</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Acts 2:14-18 (NKJV)</span>
+            <p><span class="verse-num">14</span> But Peter, standing up with the eleven, raised his voice and said to them, "Men of Judea and all who dwell in Jerusalem, let this be known to you, and heed my words.</p>
+            <p><span class="verse-num">15</span> For these are not drunk, as you suppose, since it is only the third hour of the day.</p>
+            <p><span class="verse-num">16</span> But this is what was spoken by the prophet Joel:</p>
+            <p><span class="verse-num">17</span> 'And it shall come to pass in the last days, says God, That I will pour out of My Spirit on all flesh; Your sons and your daughters shall prophesy, Your young men shall see visions, Your old men shall dream dreams.</p>
+            <p><span class="verse-num">18</span> And on My menservants and on My maidservants I will pour out My Spirit in those days; And they shall prophesy.'"</p>
+        </div>
+
+        <p>Moses seemed to be on the same page as Joel, way back in 1500 BC, desiring this for all of God's people in <strong>Numbers 11:26-29.</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Numbers 11:26-29 (NKJV)</span>
+            <p><span class="verse-num">26</span> But two men had remained in the camp: the name of one was Eldad, and the name of the other Medad. And the Spirit rested upon them.</p>
+            <p><span class="verse-num">27</span> And a young man ran and told Moses, and said, "Eldad and Medad are prophesying in the camp."</p>
+            <p><span class="verse-num">28</span> So Joshua the son of Nun, Moses' assistant, one of his choice men, answered and said, "Moses my lord, forbid them!"</p>
+            <p><span class="verse-num">29</span> Then Moses said to him, <strong>"Are you jealous for my sake? Oh, that all the Lord's people were prophets and that the Lord would put His Spirit upon them!"</strong></p>
+        </div>
+
+        <h2>All Priests Should Be Engaged Supernaturally Within God's Will</h2>
+
+        <p>In this section, we will explore examples and apply them to today. <strong>Job 4:12-21</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Job 4:12-21 (NKJV)</span>
+            <p><span class="verse-num">12</span> "Now a word was secretly brought to me, And my ear received a whisper of it.</p>
+            <p><span class="verse-num">13</span> In disquieting thoughts from the visions of the night, When deep sleep falls on men,</p>
+            <p><span class="verse-num">14</span> Fear came upon me, and trembling, Which made all my bones shake.</p>
+            <p><span class="verse-num">15</span> Then a spirit passed before my face; The hair on my body stood up.</p>
+            <p><span class="verse-num">16</span> It stood still, But I could not discern its appearance. A form was before my eyes; There was silence; Then I heard a voice saying:</p>
+            <p><span class="verse-num">17</span> 'Can a mortal be more righteous than God? Can a man be more pure than his Maker?</p>
+            <p><span class="verse-num">18</span> If He puts no trust in His servants, If He charges His angels with error,</p>
+            <p><span class="verse-num">19</span> How much more those who dwell in houses of clay, Whose foundation is in the dust, Who are crushed before a moth?</p>
+            <p><span class="verse-num">20</span> They are broken in pieces from morning till evening; They perish forever, with no one regarding.</p>
+            <p><span class="verse-num">21</span> Does not their own excellence go away? They die, even without wisdom.'"</p>
+        </div>
+
+        <h3>Open Visions And Trances</h3>
+
+        <p>Open visions are visions granted to you while you are wide awake. On the other hand, trances occur in a semi-conscious state. Open visions are typically perceived as physical realities, whereas a trance involves entering an altered state and a deeper immersion in a spiritual experience.</p>
+
+        <p>Zacharias had an open vision while performing his duties. The supernatural realm opened up to him, and the angel Gabriel was right there before him. <strong>Luke 1:5-22</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Luke 1:5-22 (NKJV)</span>
+            <p><span class="verse-num">5-6</span> There was in the days of Herod, the king of Judea, a certain priest named Zacharias, of the division of Abijah. His wife was of the daughters of Aaron, and her name was Elizabeth. And they were both righteous before God, walking in all the commandments and ordinances of the Lord blameless.</p>
+            <p><span class="verse-num">7</span> But they had no child, because Elizabeth was barren, and they were both well advanced in years.</p>
+            <p><span class="verse-num">8-10</span> So it was, that while he was serving as priest before God in the order of his division, according to the custom of the priesthood, his lot fell to burn incense when he went into the temple of the Lord. And the whole multitude of the people was praying outside at the hour of incense.</p>
+            <p><span class="verse-num">11-12</span> Then an angel of the Lord appeared to him, standing on the right side of the altar of incense. And when Zacharias saw him, he was troubled, and fear fell upon him.</p>
+            <p><span class="verse-num">13-14</span> But the angel said to him, "Do not be afraid, Zacharias, for your prayer is heard; and your wife Elizabeth will bear you a son, and you shall call his name John. And you will have joy and gladness, and many will rejoice at his birth.</p>
+            <p><span class="verse-num">15-17</span> For he will be great in the sight of the Lord, and shall drink neither wine nor strong drink. He will also be filled with the Holy Spirit, even from his mother's womb. And he will turn many of the children of Israel to the Lord their God. He will also go before Him in the spirit and power of Elijah, 'to turn the hearts of the fathers to the children,' and the disobedient to the wisdom of the just, to make ready a people prepared for the Lord."</p>
+            <p><span class="verse-num">18</span> And Zacharias said to the angel, "How shall I know this? For I am an old man, and my wife is well advanced in years."</p>
+            <p><span class="verse-num">19-20</span> And the angel answered and said to him, "I am Gabriel, who stands in the presence of God, and was sent to speak to you and bring you these glad tidings. But behold, you will be mute and not able to speak until the day these things take place, because you did not believe my words which will be fulfilled in their own time."</p>
+            <p><span class="verse-num">21-22</span> And the people waited for Zacharias, and marveled that he lingered so long in the temple. But when he came out, he could not speak to them; and they perceived that he had seen a vision in the temple, for he beckoned to them and remained speechless.</p>
+        </div>
+
+        <p>Peter was on the rooftop after an extended time of prayer when he fell into a trance. <strong>Acts 10:9-15</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Acts 10:9-15 (NKJV)</span>
+            <p><span class="verse-num">9</span> The next day, as they went on their journey and drew near the city, Peter went up on the housetop to pray, about the sixth hour.</p>
+            <p><span class="verse-num">10</span> Then he became very hungry and wanted to eat; but while they made ready, he fell into a trance</p>
+            <p><span class="verse-num">11</span> and saw heaven opened and an object like a great sheet bound at the four corners, descending to him and let down to the earth.</p>
+            <p><span class="verse-num">12</span> In it were all kinds of four-footed animals of the earth, wild beasts, creeping things, and birds of the air.</p>
+            <p><span class="verse-num">13</span> And a voice came to him, "Rise, Peter; kill and eat."</p>
+            <p><span class="verse-num">14</span> But Peter said, "Not so, Lord! For I have never eaten anything common or unclean."</p>
+            <p><span class="verse-num">15</span> And a voice spoke to him again the second time, <strong>"What God has cleansed you must not call common."</strong></p>
+        </div>
+
+        <p>Paul was visited by an angel with a message of life for 276 souls destined to die on a lost ship in the wide open and treacherous waters of the Adriatic Sea, <strong>Acts 27:21-26</strong></p>
+
+        <div class="scripture">
+            <span class="scripture-ref">Acts 27:21-26 (NKJV)</span>
+            <p><span class="verse-num">21</span> But after long abstinence from food, then Paul stood in the midst of them and said, "Men, you should have listened to me, and not have sailed from Crete and incurred this disaster and loss.</p>
+            <p><span class="verse-num">22</span> And now I urge you to take heart, for there will be no loss of life among you, but only of the ship.</p>
+            <p><span class="verse-num">23-24</span> For there stood by me this night an angel of the God to whom I belong and whom I serve, saying, 'Do not be afraid, Paul; you must be brought before Caesar; and indeed God has granted you all those who sail with you.'</p>
+            <p><span class="verse-num">25</span> Therefore take heart, men, for I believe God that it will be just as it was told me.</p>
+            <p><span class="verse-num">26</span> However, we must run aground on a certain island."</p>
+        </div>
+
+        <h2>Dreams (Night Visions)</h2>
+
+        <p>The Lord has a reason for granting us open and night visions through dreams.</p>
+
+        <h3>What a Night Vision Accomplishes</h3>
+
+        <ul>
+            <li>The sealing of instruction <strong>Job 33:15-17</strong></li>
+            <li>Protection</li>
+            <li>Divine Direction: Macedonian Mission Example <strong>Acts 16:6-12</strong></li>
+        </ul>
+
+        <div class="scripture">
+            <span class="scripture-ref">Job 33:15-17 (NKJV)</span>
+            <p><span class="verse-num">15</span> In a dream, in a vision of the night, When deep sleep falls upon men, While slumbering on their beds,</p>
+            <p><span class="verse-num">16</span> Then He opens the ears of men, And seals their instruction.</p>
+            <p><span class="verse-num">17</span> In order to turn man from his deed, And conceal pride from man,</p>
+        </div>
+
+        <div class="scripture">
+            <span class="scripture-ref">Acts 16:6-12 (NKJV)</span>
+            <p><span class="verse-num">6</span> Now when they had gone through Phrygia and the region of Galatia, they were forbidden by the Holy Spirit to preach the word in Asia.</p>
+            <p><span class="verse-num">7</span> After they had come to Mysia, they tried to go into Bithynia, but the Spirit did not permit them.</p>
+            <p><span class="verse-num">8</span> So passing by Mysia, they came down to Troas.</p>
+            <p><span class="verse-num">9</span> And a vision appeared to Paul in the night. A man of Macedonia stood and pleaded with him, saying, <strong>"Come over to Macedonia and help us."</strong></p>
+            <p><span class="verse-num">10</span> Now after he had seen the vision, immediately we sought to go to Macedonia, concluding that the Lord had called us to preach the gospel to them.</p>
+            <p><span class="verse-num">11-12</span> Therefore, sailing from Troas, we ran a straight course to Samothrace, and the next day came to Neapolis, and from there to Philippi, which is the foremost city of that part of Macedonia, a colony. And we were staying in that city for some days.</p>
+        </div>
+
+        <p>The above can be applied to an open vision as well.</p>
+
+        <h3>Interpretation Of Dreams</h3>
+
+        <p>Not all dreams are important. The scriptures teach that some dreams come from our busyness during the day or in the course of our activities in life (Ecclesiastes 5:3): <em>"For a dream comes through much activity, And a fool's voice is known by his many words."</em> Some dreams have a direct word of knowledge, as with Paul and the Macedonian man in a dream, so a great deal of interpretation is not needed.</p>
+
+        <p>To interpret the dreams that grip your attention, ask for wisdom. Joseph and Daniel are two great examples of that. The Bible says that if we ask for wisdom, we will receive it from God. The Father will not grant you a vision of the night to confuse you. Remember, He is not the author of confusion.</p>
+
+        <h2>Conclusion</h2>
+
+        <p>A priest should be living as one. Sadly, it appears that there are many believers who need a reformation, a revival. Thankfully, that's always around the corner because The Father is not far away. We established earlier in our talk that "as we live out our lives as priests unto our God, minding our priestly business, the natural should flow at some point into the supernatural." Proverbs 4:18 says, "But the path of the just <em>is</em> like the shining sun, that shines ever brighter unto the perfect day." We keep growing, and part of that is hearing Him in an ever more convoluted world.</p>
+
+        <p>If this is your desire, then hearing the Father regularly and with ease will become a part of your life. Get busy living like a priest. Be prayerful and robust in your worship. Familiarize yourself with Jesus and his Holy Spirit (Plugged In) and watch what happens.</p>
+
+        <h2>Session 4: Examining divine patterns in your life.</h2>
+
+        <p>Learning and establishing Divine Patterns will help you separate your own voice from the voice of the Holy Spirit.</p>
+    </div>
+</body>
+</html>

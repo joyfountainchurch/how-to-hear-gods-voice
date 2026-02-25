@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing God's Voice - Session 4 Slides</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #fafafa;
+            color: #2c2c2c;
+            overflow: hidden;
+        }
+
+        .slideshow {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 80px;
+            background: #fafafa;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .slide-content {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: normal;
+            margin-bottom: 0.5em;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            font-weight: normal;
+            margin-bottom: 0.8em;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 1.875em;
+            font-weight: normal;
+            margin-bottom: 0.6em;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        p {
+            font-size: 1.75em;
+            line-height: 1.7;
+            margin-bottom: 0.8em;
+            color: #3a3a3a;
+        }
+
+        .scripture {
+            font-style: italic;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ececec 100%);
+            padding: 30px 40px;
+            border-left: 4px solid #8b7355;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .scripture p {
+            font-size: 1.56em;
+            line-height: 1.8;
+            margin-bottom: 0.6em;
+        }
+
+        .scripture p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scripture-ref {
+            font-style: normal;
+            font-weight: bold;
+            color: #6b5344;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.375em;
+        }
+
+        .verse-num {
+            font-weight: bold;
+            color: #8b7355;
+            font-style: normal;
+            margin-right: 3px;
+        }
+
+        ul {
+            text-align: left;
+            list-style: none;
+            padding-left: 0;
+            display: inline-block;
+        }
+
+        ul li {
+            font-size: 1.625em;
+            line-height: 1.6;
+            margin-bottom: 0.7em;
+            padding-left: 30px;
+            position: relative;
+            text-align: left;
+        }
+
+        ul li::before {
+            content: "\2022";
+            color: #8b7355;
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        ol {
+            text-align: left;
+            display: inline-block;
+            padding-left: 30px;
+        }
+
+        ol li {
+            font-size: 1.625em;
+            line-height: 1.6;
+            margin-bottom: 0.7em;
+            padding-left: 8px;
+            text-align: left;
+        }
+
+        ol li::marker {
+            color: #8b7355;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #666;
+            margin-top: 0.5em;
+        }
+
+        .section-label {
+            font-size: 1.125em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #8b7355;
+            margin-bottom: 1em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: #8b7355;
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            font-size: 1.125em;
+            color: #888;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 30px;
+            font-size: 1.06em;
+            color: #aaa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .title-slide h1 {
+            font-size: 4em;
+            margin-bottom: 0.3em;
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.875em;
+            color: #555;
+        }
+
+        .scripture-slide .slide-content {
+            max-width: 850px;
+        }
+
+        .compact-scripture .scripture p {
+            font-size: 1.375em;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(139, 115, 85, 0.2) 60%);
+            padding: 0 4px;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.875em;
+            }
+
+            p, ul li, ol li {
+                font-size: 1.375em;
+            }
+
+            .scripture p {
+                font-size: 1.25em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow">
+
+        <!-- Slide 1: Title -->
+        <div class="slide title-slide active">
+            <div class="slide-content">
+                <h1>Hearing God's Voice</h1>
+                <p class="subtitle">Session 4: Examining and Understanding Divine Patterns in Your Life</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Discerning Your Own Voice -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Discerning If You Are Hearing Your Own Voice</h2>
+                <p>Your voice will always...</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Signs of Your Own Voice -->
+        <div class="slide">
+            <div class="slide-content">
+                <ul>
+                    <li>Align with what the flesh wants (carnal)</li>
+                    <li>Point to an idol</li>
+                    <li>Seek your immediate comfort</li>
+                    <li>Never be a higher intrusion of your thoughts</li>
+                    <li>Speak of convenience</li>
+                    <li>Disregard the grace of God</li>
+                    <li>Scream fear instead of faith</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: The Bible is Supernatural -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>The Bible is not an ordinary book — it is a natural supernatural book.</p>
+                <p>Our Father in Heaven does not want hearing Him to be a complicated subject.</p>
+                <p>Sin has ruptured what was meant to be a straightforward thing.</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: 1 Peter 2:1-3 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Peter 2:1-3 (NKJV)</span>
+                    <p>"Therefore, laying aside all malice, all deceit, hypocrisy, envy, and all evil speaking, <span class="verse-num">2</span> as newborn babes, desire the pure milk of the word, that you may grow thereby, <span class="verse-num">3</span> if indeed you have tasted that the Lord is gracious."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Meditate on Scripture -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>Your voice will win and grieve the Holy Spirit if you never take the scriptures seriously.</p>
+                <p>The scriptures serve as the best medicine for the human voice.</p>
+                <p style="font-size: 1.4em; color: #8b7355; font-weight: bold; margin-top: 10px;">MEDITATE — Think on them.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Joshua 1:8 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Joshua 1:8 (NKJV)</span>
+                    <p>"This Book of the Law shall not depart from your mouth, but you shall meditate in it day and night, that you may observe to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Psalm 1:1-3 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Psalm 1:1-3 (NKJV)</span>
+                    <p>"Blessed is the man who walks not in the counsel of the ungodly, nor stands in the path of sinners, nor sits in the seat of the scornful; <span class="verse-num">2</span> but his delight is in the law of the Lord, and in His law he meditates day and night. <span class="verse-num">3</span> He shall be like a tree planted by the rivers of water, that brings forth its fruit in its season, whose leaf also shall not wither; and whatever he does shall prosper."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Divine Patterns -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Divine Patterns</h2>
+                <p style="font-size: 1.5em; color: #8b7355; font-style: italic;">Repetition From a Relationship</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Scripture as Pattern -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>The scriptures are where we find "observable and learnable" patterns of God's dealings with humanity.</p>
+                <p>It is in those pages that we observe and learn patterns for ourselves.</p>
+                <p>The scriptures will help you "do you" in God's will.</p>
+            </div>
+        </div>
+
+        <!-- Slide 11: 2 Peter 1:20-21 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <p style="font-style: normal; margin-bottom: 20px; font-size: 1.4em;">Peter shows that scripture is a supernatural product.</p>
+                <div class="scripture">
+                    <span class="scripture-ref">2 Peter 1:20-21 (NKJV)</span>
+                    <p>"Knowing this first, that no prophecy of Scripture is of any private interpretation, <span class="verse-num">21</span> for prophecy never came by the will of man, but holy men of God spoke as they were moved by the Holy Spirit."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: 2 Timothy 3:16 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <p style="font-style: normal; margin-bottom: 20px; font-size: 1.4em;">Paul declares that God Himself authored scripture.</p>
+                <div class="scripture">
+                    <span class="scripture-ref">2 Timothy 3:16 (NKJV)</span>
+                    <p>"All Scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for <strong>instruction</strong> in righteousness."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Patterns Everywhere -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>What do scientists look for to establish a principle?</p>
+                <p>What do programmers seek to accomplish?</p>
+                <p>What is art a compendium of?</p>
+                <p style="font-size: 2em; font-weight: bold; color: #8b7355; margin-top: 20px;">PATTERNS!</p>
+            </div>
+        </div>
+
+        <!-- Slide 14: John 5:39 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <p style="font-style: normal; margin-bottom: 20px; font-size: 1.4em;">Jesus points unequivocally to the supernatural nature of the scriptures.</p>
+                <div class="scripture">
+                    <span class="scripture-ref">John 5:39 (NKJV)</span>
+                    <p>"You search the Scriptures, for in them you think you have eternal life; and these are they which testify of Me. But you are not willing to come to Me that you may have life."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Samuel Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Lessons From Samuel</h2>
+                <p style="font-size: 1.4em; color: #666; font-style: italic;">The Young Trainee Priest and Prophet</p>
+                <p style="font-size: 1.5em; color: #8b7355; margin-top: 10px;">Repetition From a Relationship</p>
+            </div>
+        </div>
+
+        <!-- Slide 16: Samuel's Background -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>Samuel was born to Hannah and Elkanah. Hannah had long been barren and suffered deeply because of it.</p>
+                <p>In her anguish, she fervently prayed at the tabernacle in Shiloh, vowing to dedicate her son to the Lord's service for his entire life.</p>
+            </div>
+        </div>
+
+        <!-- Slide 17: Hannah's Vow Fulfilled -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>God heard her prayer. Hannah conceived and gave birth to Samuel — "heard by God" — because the Lord had listened to her plea.</p>
+                <p>Once Samuel was weaned, Hannah brought him to the tabernacle and presented him to the priest Eli.</p>
+            </div>
+        </div>
+
+        <!-- Slide 18: 1 Samuel 3:1-5 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 3:1-5 (NKJV)</span>
+                    <p><span class="verse-num">1</span> Now the boy Samuel ministered to the Lord before Eli. And the word of the Lord was rare in those days; there was no widespread revelation.</p>
+                    <p><span class="verse-num">2-3</span> And it came to pass at that time, while Eli was lying down in his place, and when his eyes had begun to grow so dim that he could not see, and before the lamp of God went out in the tabernacle of the Lord where the ark of God was, and while Samuel was lying down,</p>
+                    <p><span class="verse-num">4</span> that the Lord called Samuel. And he answered, "Here I am!"</p>
+                    <p><span class="verse-num">5</span> So he ran to Eli and said, "Here I am, for you called me." And he said, "I did not call; lie down again." And he went and lay down.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19: 1 Samuel 3:6-9 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 3:6-9 (NKJV)</span>
+                    <p><span class="verse-num">6</span> Then the Lord called yet again, "Samuel!" So Samuel arose and went to Eli, and said, "Here I am, for you called me." He answered, "I did not call, my son; lie down again."</p>
+                    <p><span class="verse-num">7</span> (Now Samuel did not yet know the Lord, nor was the word of the Lord yet revealed to him.)</p>
+                    <p><span class="verse-num">8</span> And the Lord called Samuel again the third time. So he arose and went to Eli, and said, "Here I am, for you did call me." Then Eli perceived that the Lord had called the boy.</p>
+                    <p><span class="verse-num">9</span> Therefore Eli said to Samuel, <strong>"Go, lie down; and it shall be, if He calls you, that you must say, 'Speak, Lord, for Your servant hears.'"</strong> So Samuel went and lay down in his place.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 20: 1 Samuel 3:10-14 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 3:10-14 (NKJV)</span>
+                    <p><span class="verse-num">10</span> Now the Lord came and stood and called as at other times, "Samuel! Samuel!" And Samuel answered, <strong>"Speak, for Your servant hears."</strong></p>
+                    <p><span class="verse-num">11</span> Then the Lord said to Samuel: "Behold, I will do something in Israel at which both ears of everyone who hears it will tingle.</p>
+                    <p><span class="verse-num">12</span> In that day I will perform against Eli all that I have spoken concerning his house, from beginning to end.</p>
+                    <p><span class="verse-num">13-14</span> For I have told him that I will judge his house forever for the iniquity which he knows, because his sons made themselves vile, and he did not restrain them. And therefore I have sworn to the house of Eli that the iniquity of Eli's house shall not be atoned for by sacrifice or offering forever."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 21: 1 Samuel 3:15-21 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 3:15-21 (NKJV)</span>
+                    <p><span class="verse-num">15</span> So Samuel lay down until morning, and opened the doors of the house of the Lord. And Samuel was afraid to tell Eli the vision.</p>
+                    <p><span class="verse-num">16-18</span> Then Eli called Samuel and said, "Samuel, my son!" He answered, "Here I am." And he said, "What is the word that the Lord spoke to you? Please do not hide it from me." Then Samuel told him everything, and hid nothing from him. And he said, "It is the Lord. Let Him do what seems good to Him."</p>
+                    <p><span class="verse-num">19-21</span> So Samuel grew, and the Lord was with him and let none of his words fall to the ground. And all Israel from Dan to Beersheba knew that Samuel had been established as a prophet of the Lord. Then the Lord appeared again in Shiloh. For the Lord revealed Himself to Samuel in Shiloh by the word of the Lord.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 22: Learning a Pattern -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>Samuel was quickly learning a pattern in his life. This developed to the point where hearing God came with ease.</p>
+                <p>It started with a voice calling out. It concretised with paying attention and saying, "Speak, Lord, for your servant hears."</p>
+                <p>Eli had to coach him on how to handle the repeated pattern.</p>
+            </div>
+        </div>
+
+        <!-- Slide 23: What Is Your Pattern? -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>What are the patterns you are finding in your own life?</h2>
+                <p style="font-size: 1.3em; color: #666; margin-top: 20px; font-style: italic;">Example: Years ago, around September to October every year, I start getting a strong pull within my spirit to retreat.</p>
+            </div>
+        </div>
+
+        <!-- Slide 24: Samuel's Growth -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Samuel's Growth</h2>
+                <p>Let us dive deeper into Prophet Samuel's growth as a hearer of God's voice.</p>
+            </div>
+        </div>
+
+        <!-- Slide 25: 1 Samuel 9:15-17 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 9:15-17 (NKJV)</span>
+                    <p><span class="verse-num">15-16</span> Now the Lord had told Samuel in his ear the day before Saul came, saying, "Tomorrow about this time I will send you a man from the land of Benjamin, and you shall anoint him commander over My people Israel, that he may save My people from the hand of the Philistines; for I have looked upon My people, because their cry has come to Me."</p>
+                    <p><span class="verse-num">17</span> So when Samuel saw Saul, the Lord said to him, "There he is, the man of whom I spoke to you. This one shall reign over My people."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 26: Express Hearing -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>At this point, we can see that hearing the Lord was now an express — without controversy — thing for Samuel.</p>
+            </div>
+        </div>
+
+        <!-- Slide 27: 1 Samuel 10:1-4 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 10:1-4 (NKJV)</span>
+                    <p><span class="verse-num">1</span> Then Samuel took a flask of oil and poured it on his head, and kissed him and said: "Is it not because the Lord has anointed you commander over His inheritance? When you have departed from me today, you will find two men by Rachel's tomb in the territory of Benjamin at Zelzah; and they will say to you, 'The donkeys which you went to look for have been found. And now your father has ceased caring about the donkeys and is worrying about you, saying, "What shall I do about my son?"'"</p>
+                    <p><span class="verse-num">2-4</span> "Then you shall go on forward from there and come to the terebinth tree of Tabor. There three men going up to God at Bethel will meet you, one carrying three young goats, another carrying three loaves of bread, and another carrying a skin of wine. And they will greet you and give you two loaves of bread, which you shall receive from their hands."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 28: 1 Samuel 10:5-7 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 10:5-7 (NKJV)</span>
+                    <p><span class="verse-num">5-6</span> "After that you shall come to the hill of God where the Philistine garrison is. And it will happen, when you have come there to the city, that you will meet a group of prophets coming down from the high place with a stringed instrument, a tambourine, a flute, and a harp before them; and they will be prophesying. Then the Spirit of the Lord will come upon you, and you will prophesy with them and be turned into another man.</p>
+                    <p><span class="verse-num">7</span> And let it be, when these signs come to you, that you do as the occasion demands; <strong>for God is with you.</strong>"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 29: Go With the Flow -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>"Do as the occasion demands" — it sounds like "go with the flow."</p>
+                <p>We can ease ourselves into being vessels of the Lord by flowing with the occasion that presents itself as the Lord leads.</p>
+            </div>
+        </div>
+
+        <!-- Slide 30: 1 Samuel 16:1-5 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 16:1-5 (NKJV)</span>
+                    <p><span class="verse-num">1</span> Now the Lord said to Samuel, "How long will you mourn for Saul, seeing I have rejected him from reigning over Israel? Fill your horn with oil, and go; I am sending you to Jesse the Bethlehemite. For I have provided Myself a king among his sons."</p>
+                    <p><span class="verse-num">2</span> And Samuel said, "How can I go? If Saul hears it, he will kill me." But the Lord said, "Take a heifer with you, and say, 'I have come to sacrifice to the Lord.'"</p>
+                    <p><span class="verse-num">3-5</span> "Then invite Jesse to the sacrifice, and I will show you what you shall do; you shall anoint for Me the one I name to you." So Samuel did what the Lord said, and went to Bethlehem. And the elders of the town trembled at his coming, and said, "Do you come peaceably?" And he said, "Peaceably; I have come to sacrifice to the Lord."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 31: 1 Samuel 16:6-10 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 16:6-10 (NKJV)</span>
+                    <p><span class="verse-num">6</span> So it was, when they came, that he looked at Eliab and said, "Surely the Lord's anointed is before Him!"</p>
+                    <p><span class="verse-num">7</span> But the Lord said to Samuel, <strong>"Do not look at his appearance or at his physical stature, because I have refused him. For the Lord does not see as man sees; for man looks at the outward appearance, but the Lord looks at the heart."</strong></p>
+                    <p><span class="verse-num">8-10</span> So Jesse called Abinadab, and made him pass before Samuel. And he said, "Neither has the Lord chosen this one." Then Jesse made Shammah pass by. And he said, "Neither has the Lord chosen this one." Thus Jesse made seven of his sons pass before Samuel. And Samuel said to Jesse, "The Lord has not chosen these."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 32: 1 Samuel 16:11-13 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 Samuel 16:11-13 (NKJV)</span>
+                    <p><span class="verse-num">11</span> And Samuel said to Jesse, "Are all the young men here?" Then he said, "There remains yet the youngest, and there he is, keeping the sheep." And Samuel said to Jesse, "Send and bring him. For we will not sit down till he comes here."</p>
+                    <p><span class="verse-num">12-13</span> So he sent and brought him in. Now he was ruddy, with bright eyes, and good-looking. And the Lord said, <strong>"Arise, anoint him; for this is the one!"</strong> Then Samuel took the horn of oil and anointed him in the midst of his brothers; and the Spirit of the Lord came upon David from that day forward. So Samuel arose and went to Ramah.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 33: What Pattern Is God Establishing With You? -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>What Is the Pattern the Father Is Establishing With You?</h2>
+            </div>
+        </div>
+
+        <!-- Slide 34: Ezekiel 12:8 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Ezekiel 12:8 (NKJV)</span>
+                    <p>"And in the morning the word of the Lord came to me, saying,"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 35: Isaiah 50:4 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Isaiah 50:4 (NKJV)</span>
+                    <p>"The Lord God has given Me the tongue of the learned, that I should know how to speak a word in season to him who is weary. <strong>He awakens Me morning by morning, He awakens My ear to hear as the learned."</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 36: Back to the Beginning -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>"As we live out our lives as priests unto our God, minding our priestly business, the natural should flow at some point into the supernatural."</p>
+                <p>Don't ever forget that!</p>
+            </div>
+        </div>
+
+        <!-- Slide 37: Jesus' Pattern -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>Jesus had to do the "getting up early," "a great while before day," and the "depart from the house" part.</p>
+                <p>If you decide to live like a priest and set times within your own power and responsibility — do what you need to do — God will meet you along the way.</p>
+            </div>
+        </div>
+
+        <!-- Slide 38: Saul Going in Obedience -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>Look again at the story of Saul.</p>
+                <p>It was as he was <strong>going</strong> in obedience to Samuel's instruction that supernatural things began to happen to him.</p>
+            </div>
+        </div>
+
+        <!-- Slide 39: Acts 3:1-5 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 3:1-5 (NKJV)</span>
+                    <p><span class="verse-num">1</span> Now Peter and John went up together to the temple at the hour of prayer, the ninth hour.</p>
+                    <p><span class="verse-num">2-3</span> And a certain man lame from his mother's womb was carried, whom they laid daily at the gate of the temple which is called Beautiful, to ask alms from those who entered the temple; who, seeing Peter and John about to go into the temple, asked for alms.</p>
+                    <p><span class="verse-num">4-5</span> And fixing his eyes on him, with John, Peter said, "Look at us." So he gave them his attention, expecting to receive something from them.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 40: Acts 3:6-10 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 3:6-10 (NKJV)</span>
+                    <p><span class="verse-num">6</span> Then Peter said, "Silver and gold I do not have, but what I do have I give you: <strong>In the name of Jesus Christ of Nazareth, rise up and walk.</strong>"</p>
+                    <p><span class="verse-num">7-8</span> And he took him by the right hand and lifted him up, and immediately his feet and ankle bones received strength. So he, leaping up, stood and walked and entered the temple with them — walking, leaping, and praising God.</p>
+                    <p><span class="verse-num">9-10</span> And all the people saw him walking and praising God. Then they knew that it was he who sat begging alms at the Beautiful Gate of the temple; and they were filled with wonder and amazement at what had happened to him.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 41: Conclusion -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Conclusion</h2>
+                <p>We cannot fix God into a mould and expect it to be how it always has to be. He can break moulds and do as He pleases. He holds the element of surprise.</p>
+            </div>
+        </div>
+
+        <!-- Slide 42: Read and Meditate -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>Read and meditate on the scriptures as a habit, and you will walk into His will.</p>
+                <p>Let us remain open — meek, willing, and humble to flow — to God's move in our lives.</p>
+                <p style="font-size: 1.4em; color: #8b7355; margin-top: 20px; font-weight: bold;">His voice will become clearer.</p>
+            </div>
+        </div>
+
+        <!-- Slide 43: Prayer -->
+        <div class="slide">
+            <div class="slide-content">
+                <p style="font-size: 2em; line-height: 1.6; font-style: italic; color: #444;">"Lord Jesus, give me the grace to establish a pattern with you that I may walk in your patterns for me."</p>
+            </div>
+        </div>
+
+        <!-- Slide 44: Homework -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Homework</h2>
+                <p>Read and meditate on the following passages. Pay attention to the conversations between God and the human and imagine yourself having such a conversation or receiving instructions.</p>
+                <p style="font-size: 1.4em; color: #8b7355; margin-top: 20px; font-weight: bold;">Genesis 12:1-3 &amp; Genesis 18:16-33</p>
+            </div>
+        </div>
+
+        <!-- Slide 45: Genesis 12:1-3 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 12:1-3 (NKJV)</span>
+                    <p>"Now the Lord had said to Abram: 'Get out of your country, from your family and from your father's house, to a land that I will show you. <span class="verse-num">2</span> I will make you a great nation; I will bless you and make your name great; and you shall be a blessing. <span class="verse-num">3</span> I will bless those who bless you, and I will curse him who curses you; and in you all the families of the earth shall be blessed.'"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 46: Genesis 18:16-20 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 18:16-20 (NKJV)</span>
+                    <p><span class="verse-num">16-17</span> Then the men rose from there and looked toward Sodom, and Abraham went with them to send them on the way. And the Lord said, "Shall I hide from Abraham what I am doing,</p>
+                    <p><span class="verse-num">18</span> since Abraham shall surely become a great and mighty nation, and all the nations of the earth shall be blessed in him?</p>
+                    <p><span class="verse-num">19-20</span> For I have known him, in order that he may command his children and his household after him, that they keep the way of the Lord, to do righteousness and justice, that the Lord may bring to Abraham what He has spoken to him." And the Lord said, "Because the outcry against Sodom and Gomorrah is great, and because their sin is very grave..."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 47: Genesis 18:23-28 (Abraham Intercedes) -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 18:23-28 (NKJV)</span>
+                    <p><span class="verse-num">23</span> And Abraham came near and said, "Would You also destroy the righteous with the wicked?</p>
+                    <p><span class="verse-num">24-25</span> Suppose there were fifty righteous within the city; would You also destroy the place and not spare it for the fifty righteous that were in it? Far be it from You to do such a thing as this... Shall not the Judge of all the earth do right?"</p>
+                    <p><span class="verse-num">26</span> So the Lord said, "If I find in Sodom fifty righteous within the city, then I will spare all the place for their sakes."</p>
+                    <p><span class="verse-num">27-28</span> Then Abraham answered and said, "Indeed now, I who am but dust and ashes have taken it upon myself to speak to the Lord: Suppose there were five less than the fifty righteous; would You destroy all of the city for lack of five?" So He said, "If I find there forty-five, I will not destroy it."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 48: Genesis 18:29-33 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 18:29-33 (NKJV)</span>
+                    <p><span class="verse-num">29</span> And he spoke to Him yet again and said, "Suppose there should be forty found there?" So He said, "I will not do it for the sake of forty."</p>
+                    <p><span class="verse-num">30</span> Then he said, "Let not the Lord be angry, and I will speak: Suppose thirty should be found there?" So He said, "I will not do it if I find thirty there."</p>
+                    <p><span class="verse-num">31-32</span> And he said, "Suppose twenty should be found there?" So He said, "I will not destroy it for the sake of twenty." Then he said, "Suppose ten should be found there?" And He said, "I will not destroy it for the sake of ten."</p>
+                    <p><span class="verse-num">33</span> So the Lord went His way as soon as He had finished speaking with Abraham; and Abraham returned to his place.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 49: Session 5 Preview -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Session 5 Examines</h2>
+                <p style="font-size: 1.6em; margin-top: 30px;">"He Is an Initiator: Pay Attention."</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-counter" id="slideCounter">1 / 49</div>
+    <div class="nav-hint">Use arrow keys to navigate</div>
+    <a href="index.html" title="Course Home" style="position: fixed; top: 20px; right: 30px; text-decoration: none; padding: 10px; background: white; border: 1px solid #ddd; border-radius: 4px; color: #8b7355; display: inline-flex; align-items: center; justify-content: center; line-height: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></a>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+        const slideCounter = document.getElementById('slideCounter');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= slides.length) index = slides.length - 1;
+
+            slides[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = progress + '%';
+
+            slideCounter.textContent = (currentSlide + 1) + ' / ' + slides.length;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                showSlide(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                showSlide(slides.length - 1);
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            const x = e.clientX;
+            const width = window.innerWidth;
+            if (x > width / 2) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        });
+
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        });
+
+        showSlide(0);
+    </script>
+</body>
+</html>

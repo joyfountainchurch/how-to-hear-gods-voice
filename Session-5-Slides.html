@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing God's Voice - Session 5 Slides</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #fafafa;
+            color: #2c2c2c;
+            overflow: hidden;
+        }
+
+        .slideshow {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 80px;
+            background: #fafafa;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .slide-content {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: normal;
+            margin-bottom: 0.5em;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            font-weight: normal;
+            margin-bottom: 0.8em;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 1.875em;
+            font-weight: normal;
+            margin-bottom: 0.6em;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        p {
+            font-size: 1.75em;
+            line-height: 1.7;
+            margin-bottom: 0.8em;
+            color: #3a3a3a;
+        }
+
+        .scripture {
+            font-style: italic;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ececec 100%);
+            padding: 30px 40px;
+            border-left: 4px solid #8b7355;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .scripture p {
+            font-size: 1.56em;
+            line-height: 1.8;
+            margin-bottom: 0.6em;
+        }
+
+        .scripture p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scripture-ref {
+            font-style: normal;
+            font-weight: bold;
+            color: #6b5344;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.375em;
+        }
+
+        .verse-num {
+            font-weight: bold;
+            color: #8b7355;
+            font-style: normal;
+            margin-right: 3px;
+        }
+
+        ul {
+            text-align: left;
+            list-style: none;
+            padding-left: 0;
+            display: inline-block;
+        }
+
+        ul li {
+            font-size: 1.625em;
+            line-height: 1.6;
+            margin-bottom: 0.7em;
+            padding-left: 30px;
+            position: relative;
+            text-align: left;
+        }
+
+        ul li::before {
+            content: "\2022";
+            color: #8b7355;
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #666;
+            margin-top: 0.5em;
+        }
+
+        .section-label {
+            font-size: 1.125em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #8b7355;
+            margin-bottom: 1em;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: #8b7355;
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            font-size: 1.125em;
+            color: #888;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 30px;
+            font-size: 1.06em;
+            color: #aaa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .title-slide h1 {
+            font-size: 4em;
+            margin-bottom: 0.3em;
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.875em;
+            color: #555;
+        }
+
+        .scripture-slide .slide-content {
+            max-width: 850px;
+        }
+
+        .compact-scripture .scripture p {
+            font-size: 1.375em;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(139, 115, 85, 0.2) 60%);
+            padding: 0 4px;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.875em;
+            }
+
+            p, ul li {
+                font-size: 1.375em;
+            }
+
+            .scripture p {
+                font-size: 1.25em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow">
+
+        <!-- Slide 1: Title -->
+        <div class="slide title-slide active">
+            <div class="slide-content">
+                <h1>Hearing God's Voice</h1>
+                <p class="subtitle">Session 5: The Father Initiates Conversation</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Opening -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>One thing you will come across in how God speaks to His people is that He does initiate conversations.</p>
+                <p>You also, as His child, can and should initiate conversations.</p>
+                <p style="font-size: 1.4em; color: #8b7355; margin-top: 10px; font-style: italic;">Our God is "the same yesterday, today, and forever."</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Abraham Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Abraham</h2>
+                <p>The Lord initiated a conversation with Abraham.</p>
+                <p style="font-size: 1.4em; color: #8b7355; font-weight: bold;">Genesis 18:16-33</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Genesis 18:16-21 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 18:16-21 (NKJV)</span>
+                    <p><span class="verse-num">16-17</span> Then the men rose from there and looked toward Sodom, and Abraham went with them to send them on the way. And the Lord said, "Shall I hide from Abraham what I am doing,</p>
+                    <p><span class="verse-num">18-19</span> since Abraham shall surely become a great and mighty nation, and all the nations of the earth shall be blessed in him? For I have known him, in order that he may command his children and his household after him, that they keep the way of the Lord, to do righteousness and justice, that the Lord may bring to Abraham what He has spoken to him."</p>
+                    <p><span class="verse-num">20-21</span> And the Lord said, "Because the outcry against Sodom and Gomorrah is great, and because their sin is very grave, I will go down now and see whether they have done altogether according to the outcry against it that has come to Me; and if not, I will know."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Genesis 18:22-26 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 18:22-26 (NKJV)</span>
+                    <p><span class="verse-num">22-23</span> Then the men turned away from there and went toward Sodom, but Abraham still stood before the Lord. And Abraham came near and said, "Would You also destroy the righteous with the wicked?</p>
+                    <p><span class="verse-num">24-25</span> Suppose there were fifty righteous within the city; would You also destroy the place and not spare it for the fifty righteous that were in it? Far be it from You to do such a thing as this... Shall not the Judge of all the earth do right?"</p>
+                    <p><span class="verse-num">26</span> So the Lord said, "If I find in Sodom fifty righteous within the city, then I will spare all the place for their sakes."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Genesis 18:27-33 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Genesis 18:27-33 (NKJV)</span>
+                    <p><span class="verse-num">27-28</span> Then Abraham answered and said, "Indeed now, I who am but dust and ashes have taken it upon myself to speak to the Lord: Suppose there were five less than the fifty righteous; would You destroy all of the city for lack of five?" So He said, "If I find there forty-five, I will not destroy it."</p>
+                    <p><span class="verse-num">29-31</span> "Suppose forty?" — "I will not do it." "Suppose thirty?" — "I will not do it." "Suppose twenty?" — "I will not destroy it."</p>
+                    <p><span class="verse-num">32-33</span> "Suppose ten should be found there?" And He said, "I will not destroy it for the sake of ten." So the Lord went His way as soon as He had finished speaking with Abraham; and Abraham returned to his place.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Ananias Intro -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Ananias</h2>
+                <p>The Lord initiated a conversation with Ananias and gave him instructions.</p>
+                <p style="font-size: 1.4em; color: #8b7355; font-weight: bold;">Acts 9:10-17</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Acts 9:10-14 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 9:10-14 (NKJV)</span>
+                    <p><span class="verse-num">10</span> Now there was a certain disciple at Damascus named Ananias; and to him the Lord said in a vision, "Ananias." And he said, <strong>"Here I am, Lord."</strong></p>
+                    <p><span class="verse-num">11-12</span> So the Lord said to him, "Arise and go to the street called Straight, and inquire at the house of Judas for one called Saul of Tarsus, for behold, he is praying. And in a vision he has seen a man named Ananias coming in and putting his hand on him, so that he might receive his sight."</p>
+                    <p><span class="verse-num">13-14</span> Then Ananias answered, "Lord, I have heard from many about this man, how much harm he has done to Your saints in Jerusalem. And here he has authority from the chief priests to bind all who call on Your name."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Acts 9:15-17 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 9:15-17 (NKJV)</span>
+                    <p><span class="verse-num">15</span> But the Lord said to him, <strong>"Go, for he is a chosen vessel of Mine to bear My name before Gentiles, kings, and the children of Israel.</strong></p>
+                    <p><span class="verse-num">16</span> For I will show him how many things he must suffer for My name's sake."</p>
+                    <p><span class="verse-num">17</span> And Ananias went his way and entered the house; and laying his hands on him he said, "Brother Saul, the Lord Jesus, who appeared to you on the road as you came, has sent me that you may receive your sight and be filled with the Holy Spirit."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: You Have One Job -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>You Have One Job.</h2>
+                <p style="font-size: 2.5em; font-weight: bold; color: #8b7355; margin-top: 20px;">Show up!</p>
+            </div>
+        </div>
+
+        <!-- Slide 11: The Four Points -->
+        <div class="slide">
+            <div class="slide-content">
+                <ul>
+                    <li>Daily watching at His gates</li>
+                    <li>Labouring for what matters most — the <strong>FOOD</strong> from Him that does not perish</li>
+                    <li>Paying attention to what <strong>PULLS</strong> you in</li>
+                    <li>He initiates. You respond!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 12: Proverbs 8:34 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Proverbs 8:34 (NKJV)</span>
+                    <p>"Blessed is the man who listens to me, watching daily at my gates, waiting at the posts of my doors."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: John 6:27 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">John 6:27 (NKJV)</span>
+                    <p>"Do not labor for the food which perishes, but for the food which endures to everlasting life, which the Son of Man will give you, because God the Father has set His seal on Him."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: How He Speaks -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>How He Speaks</h2>
+                <p style="font-size: 1.5em; color: #8b7355; font-style: italic;">Starting Off With Scriptures</p>
+            </div>
+        </div>
+
+        <!-- Slide 15: The Holy Scriptures -->
+        <div class="slide">
+            <div class="slide-content">
+                <p><strong>The Holy Scriptures:</strong> Daniel understood through the books. Jesus understood through the books. Nehemiah understood through what he heard and the books he had studied.</p>
+                <p>All these examples also included direct messages and confirmations from heaven.</p>
+            </div>
+        </div>
+
+        <!-- Slide 16: Romans 15:4 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <p style="font-style: normal; margin-bottom: 20px; font-size: 1.4em;">The value of the Scriptures</p>
+                <div class="scripture">
+                    <span class="scripture-ref">Romans 15:4 (NKJV)</span>
+                    <p>"For whatever things were written before were written for our learning, that we through the patience and comfort of the Scriptures might have hope."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 17: Daniel 9:1-3 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <p style="font-style: normal; margin-bottom: 20px; font-size: 1.4em;">Daniel's Record</p>
+                <div class="scripture">
+                    <span class="scripture-ref">Daniel 9:1-3 (NKJV)</span>
+                    <p><span class="verse-num">1-2</span> In the first year of Darius the son of Ahasuerus, of the lineage of the Medes, who was made king over the realm of the Chaldeans — in the first year of his reign I, Daniel, <strong>understood by the books</strong> the number of the years specified by the word of the Lord through Jeremiah the prophet, that He would accomplish seventy years in the desolations of Jerusalem.</p>
+                    <p><span class="verse-num">3</span> Then I set my face toward the Lord God to make request by prayer and supplications, with fasting, sackcloth, and ashes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 18: Hebrews 10:5-7 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <p style="font-style: normal; margin-bottom: 20px; font-size: 1.4em;">Jesus' Record</p>
+                <div class="scripture">
+                    <span class="scripture-ref">Hebrews 10:5-7 (NKJV)</span>
+                    <p><span class="verse-num">5</span> Therefore, when He came into the world, He said: "Sacrifice and offering You did not desire, but a body You have prepared for Me.</p>
+                    <p><span class="verse-num">6</span> In burnt offerings and sacrifices for sin You had no pleasure.</p>
+                    <p><span class="verse-num">7</span> Then I said, 'Behold, I have come — <strong>in the volume of the book it is written of Me</strong> — to do Your will, O God.'"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19: Hebrews 10:8-10 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Hebrews 10:8-10 (NKJV)</span>
+                    <p><span class="verse-num">8-9</span> Previously saying, "Sacrifice and offering, burnt offerings, and offerings for sin You did not desire, nor had pleasure in them" (which are offered according to the law), then He said, "Behold, I have come to do Your will, O God." He takes away the first that He may establish the second.</p>
+                    <p><span class="verse-num">10</span> By that will we have been sanctified through the offering of the body of Jesus Christ once for all.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 20: Luke 4:16-21 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Luke 4:16-21 (NKJV)</span>
+                    <p><span class="verse-num">16-17</span> So He came to Nazareth, where He had been brought up. And as His custom was, He went into the synagogue on the Sabbath day, and stood up to read. And He was handed the book of the prophet Isaiah.</p>
+                    <p><span class="verse-num">18-19</span> "The Spirit of the Lord is upon Me, because He has anointed Me to preach the gospel to the poor; He has sent Me to heal the brokenhearted, to proclaim liberty to the captives and recovery of sight to the blind, to set at liberty those who are oppressed; to proclaim the acceptable year of the Lord."</p>
+                    <p><span class="verse-num">20-21</span> Then He closed the book, and gave it back to the attendant and sat down. And He began to say to them, <strong>"Today this Scripture is fulfilled in your hearing."</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 21: Nehemiah 1:11 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <p style="font-style: normal; margin-bottom: 20px; font-size: 1.4em;">Nehemiah's Record</p>
+                <div class="scripture">
+                    <span class="scripture-ref">Nehemiah 1:11 (NKJV)</span>
+                    <p>"O Lord, I pray, please let Your ear be attentive to the prayer of Your servant, and to the prayer of Your servants who desire to fear Your name; and let Your servant prosper this day, I pray, and grant him mercy in the sight of this man. For I was the king's cupbearer."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 22: Nehemiah 2:1-4 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Nehemiah 2:1-4 (NKJV)</span>
+                    <p><span class="verse-num">1</span> And it came to pass in the month of Nisan, in the twentieth year of King Artaxerxes, when wine was before him, that I took the wine and gave it to the king. Now I had never been sad in his presence before.</p>
+                    <p><span class="verse-num">2-3</span> Therefore the king said to me, "Why is your face sad, since you are not sick? This is nothing but sorrow of heart." So I became dreadfully afraid, and said to the king, "May the king live forever! Why should my face not be sad, when the city, the place of my fathers' tombs, lies waste, and its gates are burned with fire?"</p>
+                    <p><span class="verse-num">4</span> Then the king said to me, "What do you request?" <strong>So I prayed to the God of heaven.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 23: Nehemiah 2:5-8 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Nehemiah 2:5-8 (NKJV)</span>
+                    <p><span class="verse-num">5-6</span> And I said to the king, "If it pleases the king, and if your servant has found favor in your sight, I ask that you send me to Judah, to the city of my fathers' tombs, that I may rebuild it." Then the king said to me, "How long will your journey be? And when will you return?" So it pleased the king to send me; and I set him a time.</p>
+                    <p><span class="verse-num">7-8</span> Furthermore I said to the king, "If it pleases the king, let letters be given to me for the governors of the region beyond the River..." And the king granted them to me <strong>according to the good hand of my God upon me.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 24: The BOOK of all Books -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>Get familiar with <strong>The BOOK of all Books</strong>.</p>
+                <p>We call it <strong>Bible</strong> (derived from Koine Greek Biblio and Biblia, meaning "Book" and "Many Books" respectively).</p>
+            </div>
+        </div>
+
+        <!-- Slide 25: Inner Witness -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Inner Witness</h2>
+                <p>We just know in our <strong>KNOWER</strong></p>
+                <ul>
+                    <li>The Holy Spirit confirms to us that we are God's children with an <strong>inner witness</strong></li>
+                    <li>The Holy Spirit confirms God's will to us within our spirit</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 26: Romans 8:14-16 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Romans 8:14-16 (NKJV)</span>
+                    <p><span class="verse-num">14</span> For as many as are led by the Spirit of God, these are sons of God.</p>
+                    <p><span class="verse-num">15</span> For you did not receive the spirit of bondage again to fear, but you received the Spirit of adoption by whom we cry out, <strong>"Abba, Father."</strong></p>
+                    <p><span class="verse-num">16</span> The Spirit Himself bears witness with our spirit that we are children of God.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 27: Direct Audible Voice -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Direct Audible Voice</h2>
+                <ul>
+                    <li>Prophet Samuel</li>
+                    <li>Ananias (the Damascus Disciple)</li>
+                    <li>Saul the persecutor on the road to Damascus</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 28: Acts 9:3-7 -->
+        <div class="slide scripture-slide compact-scripture">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Acts 9:3-7 (NKJV)</span>
+                    <p><span class="verse-num">3-4</span> As he journeyed he came near Damascus, and suddenly a light shone around him from heaven. Then he fell to the ground, and heard a voice saying to him, <strong>"Saul, Saul, why are you persecuting Me?"</strong></p>
+                    <p><span class="verse-num">5</span> And he said, "Who are You, Lord?" Then the Lord said, "I am Jesus, whom you are persecuting. It is hard for you to kick against the goads."</p>
+                    <p><span class="verse-num">6</span> So he, trembling and astonished, said, "Lord, what do You want me to do?" Then the Lord said to him, "Arise and go into the city, and you will be told what you must do."</p>
+                    <p><span class="verse-num">7</span> And the men who journeyed with him stood speechless, hearing a voice but seeing no one.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 29: Third Party Agents -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Third Party Agents</h2>
+                <ul>
+                    <li>Angels</li>
+                    <li>Other human agents, such as ministers, brothers, and sisters in Christ</li>
+                    <li>Third-party confirmations from third-party agents</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 30: Circumstantial Evidence -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Circumstantial Evidence</h2>
+                <ul>
+                    <li>When things line up in an unusual way</li>
+                    <li>You cannot miss it</li>
+                    <li>I would not place too much emphasis on this, because circumstances may not align with the reality of our faith walk</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 31: You Can Initiate -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>You Can and Should Initiate Conversations</h2>
+                <p>While the Father initiates conversation anytime, anywhere, as He wills, you're more than welcome to talk to your Father just as you would to someone standing right by you.</p>
+            </div>
+        </div>
+
+        <!-- Slide 32: Fellowship Restored -->
+        <div class="slide">
+            <div class="slide-content">
+                <p>In any best-friend relationship, creating a special time to meet and enjoy each other's company comes naturally.</p>
+                <p>In the Garden before the fall, the Lord God met Adam and Eve daily for fellowship.</p>
+                <p style="font-size: 1.4em; color: #8b7355; font-weight: bold; margin-top: 10px;">Redemption restores that fellowship.</p>
+            </div>
+        </div>
+
+        <!-- Slide 33: What To Say To Abba -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>What To Say To Abba</h2>
+                <ul>
+                    <li>Ask questions. Ask Him anything.</li>
+                    <li>Talk to Him just like if you were talking to a dear friend</li>
+                    <li>Praise and worship Him with your words</li>
+                    <li>Sing to Him songs of praise and worship</li>
+                    <li>Repent. Keep short accounts.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 34: 1 John 1:9-10 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">1 John 1:9-10 (NKJV)</span>
+                    <p><span class="verse-num">9</span> "If we confess our sins, He is faithful and just to forgive us our sins and to cleanse us from all unrighteousness.</p>
+                    <p><span class="verse-num">10</span> If we say that we have not sinned, we make Him a liar, and His word is not in us."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 35: Practice Hearing -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Practice Hearing: Get Used To It</h2>
+                <p>If you are intentionally seeking, you will find Him, and you will hear Him.</p>
+            </div>
+        </div>
+
+        <!-- Slide 36: Jeremiah 29:13 -->
+        <div class="slide scripture-slide">
+            <div class="slide-content">
+                <div class="scripture">
+                    <span class="scripture-ref">Jeremiah 29:13 (NKJV)</span>
+                    <p>"And you will seek Me and find Me, when you search for Me with all your heart."</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-counter" id="slideCounter">1 / 36</div>
+    <div class="nav-hint">Use arrow keys to navigate</div>
+    <a href="index.html" title="Course Home" style="position: fixed; top: 20px; right: 30px; text-decoration: none; padding: 10px; background: white; border: 1px solid #ddd; border-radius: 4px; color: #8b7355; display: inline-flex; align-items: center; justify-content: center; line-height: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></a>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+        const slideCounter = document.getElementById('slideCounter');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= slides.length) index = slides.length - 1;
+
+            slides[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = progress + '%';
+
+            slideCounter.textContent = (currentSlide + 1) + ' / ' + slides.length;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                showSlide(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                showSlide(slides.length - 1);
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            const x = e.clientX;
+            const width = window.innerWidth;
+            if (x > width / 2) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        });
+
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        });
+
+        showSlide(0);
+    </script>
+</body>
+</html>
